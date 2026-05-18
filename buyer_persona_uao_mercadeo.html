@@ -3,953 +3,485 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buyer Persona Ejecutivo — El Pragmático Digital · UAO 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<title>Buyer Persona — Daniela · UAO 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #0f0f1a;
-    --dark2: #1a1a2e;
-    --purple: #534AB7;
-    --purple-light: #7F77DD;
-    --purple-pale: #EEEDFE;
-    --purple-mid: #AFA9EC;
-    --purple-soft: #CECBF6;
-    --red: #A32D2D;
-    --red-light: #FCEBEB;
-    --amber: #854F0B;
-    --amber-light: #FAEEDA;
-    --green: #3B6D11;
-    --green-light: #EAF3DE;
-    --gray: #5F5E5A;
-    --gray-light: #F1EFE8;
-    --gray-border: #D3D1C7;
-    --text: #2C2C2A;
-    --text-sec: #888780;
-    --white: #ffffff;
-    --bg: #faf9f7;
+    --red:#C0001A; --red-dark:#8B0010; --brown:#2C1A0E;
+    --beige:#F5ECD7; --beige2:#EDE0C4; --beige3:#D4C4A0;
+    --white:#FFFFFF; --gold:#F5C97A; --text:#2C1A0E; --text2:#7A6A50; --border:#E0D0B0;
   }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--beige);color:var(--text);font-size:14px;line-height:1.6;}
+  .page{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 4rem;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* HERO */
+  .hero{display:grid;grid-template-columns:260px 1fr;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-bottom:1.5rem;}
+  .col-left{background:var(--white);padding:2rem 1.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:1.1rem;align-items:center;text-align:center;}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.6;
-  }
+  /* AVATAR SVG */
+  .avatar-wrap{position:relative;width:100px;height:100px;margin:0 auto;}
+  .avatar-svg{width:100px;height:100px;border-radius:50%;border:2.5px solid var(--red);overflow:hidden;display:block;}
 
-  /* ── PAGE WRAPPER ── */
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 3rem 2rem 5rem;
-  }
+  .profile-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--brown);}
+  .profile-role{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;}
+  .profile-sub{font-size:11px;color:var(--text2);line-height:1.5;}
+  .data-rows{width:100%;display:flex;flex-direction:column;gap:6px;}
+  .data-row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;background:var(--beige);border-radius:8px;border:1px solid var(--border);text-align:left;}
+  .data-icon{font-size:13px;flex-shrink:0;margin-top:1px;}
+  .data-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;display:block;margin-bottom:1px;}
+  .data-val{font-size:11.5px;color:var(--text);line-height:1.4;}
+  .data-narrative{font-size:10.5px;color:var(--text2);font-style:italic;margin-top:1px;}
 
-  /* ── COVER ── */
-  .cover {
-    background: var(--dark2);
-    border-radius: 20px;
-    padding: 3.5rem 3.5rem 3rem;
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .cover::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(83,74,183,0.35) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cover::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; left: 40%;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(127,119,221,0.2) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cover-eyebrow {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--purple-light);
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-  .cover-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 52px;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-  }
-  .cover-sub {
-    font-size: 15px;
-    color: var(--purple-soft);
-    margin-bottom: 2rem;
-    font-weight: 300;
-  }
-  .cover-profile {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--purple), var(--purple-light));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; font-weight: 600; color: var(--white);
-    flex-shrink: 0;
-  }
-  .avatar-info h2 {
-    font-size: 18px; font-weight: 500; color: var(--white);
-    font-family: 'DM Serif Display', serif;
-  }
-  .avatar-info p { font-size: 13px; color: var(--purple-soft); font-weight: 300; }
-  .cover-pills {
-    display: flex; gap: 10px; flex-wrap: wrap;
-  }
-  .pill {
-    background: rgba(127,119,221,0.15);
-    border: 1px solid rgba(127,119,221,0.3);
-    border-radius: 20px;
-    padding: 5px 16px;
-    font-size: 11.5px;
-    color: var(--purple-soft);
-    font-weight: 400;
-  }
-  .cover-meta {
-    position: absolute;
-    top: 3.5rem; right: 3.5rem;
-    text-align: right;
-  }
-  .cover-meta p {
-    font-size: 11px;
-    color: rgba(206,203,246,0.5);
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
+  .col-right{background:var(--beige);padding:2rem;display:flex;flex-direction:column;gap:1.1rem;}
+  .hero-tag{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text2);font-weight:600;display:flex;align-items:center;gap:8px;}
+  .hero-tag::before{content:'';width:18px;height:1px;background:var(--red);}
+  .hero-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--brown);line-height:1.05;}
+  .hero-title span{color:var(--red);}
+  .year-pill{display:inline-block;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--text2);font-weight:600;}
 
-  /* ── SECTIONS ── */
-  .section { margin-bottom: 2.5rem; }
+  .dolor-box{background:var(--white);border-radius:10px;border:1px solid var(--border);border-left:3px solid var(--red);padding:1rem 1.1rem;}
+  .dolor-tag{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:700;margin-bottom:5px;}
+  .dolor-quote{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--brown);font-style:italic;margin-bottom:6px;}
+  .dolor-context{font-size:10.5px;color:var(--text2);line-height:1.55;font-style:italic;}
+  .dolor-context a{color:var(--red);text-decoration:none;border-bottom:1px dotted var(--red);}
 
-  .sec-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1.25rem;
-  }
-  .sec-num {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: var(--purple-pale);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 600; color: var(--purple);
-    flex-shrink: 0;
-  }
-  .sec-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: var(--text);
-    letter-spacing: -0.3px;
-  }
-  .sec-line {
-    flex: 1;
-    height: 1px;
-    background: var(--gray-border);
-  }
+  .tension{display:grid;grid-template-columns:1fr 36px 1fr;gap:10px;align-items:center;}
+  .t-box{border-radius:10px;padding:0.875rem;}
+  .t-fear{background:#FFF5F5;border:1px solid #FFDDDD;}
+  .t-desire{background:#F5F0FF;border:1px solid #DDD5FF;}
+  .t-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+  .t-fear .t-label{color:var(--red);}
+  .t-desire .t-label{color:#6C5CE7;}
+  .t-item{font-size:11px;color:var(--text);margin-bottom:4px;padding-left:10px;position:relative;line-height:1.4;}
+  .t-item::before{content:'·';position:absolute;left:0;font-weight:700;}
+  .t-fear .t-item::before{color:var(--red);}
+  .t-desire .t-item::before{color:#6C5CE7;}
+  .t-vs{text-align:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--beige3);}
 
-  /* ── TABLES ── */
-  .tbl-wrap { border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-border); }
-  table { width: 100%; border-collapse: collapse; }
-  thead th {
-    background: var(--gray-light);
-    padding: 10px 14px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-sec);
-    text-align: left;
-    border-bottom: 1px solid var(--gray-border);
-  }
-  tbody tr:nth-child(even) { background: var(--gray-light); }
-  tbody tr:nth-child(odd) { background: var(--white); }
-  tbody td {
-    padding: 10px 14px;
-    font-size: 13px;
-    color: var(--text);
-    vertical-align: top;
-    border-bottom: 1px solid var(--gray-border);
-    line-height: 1.55;
-  }
-  tbody tr:last-child td { border-bottom: none; }
-  .td-label {
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-  }
+  /* DÍA DIGITAL — dentro del hero col-right */
+  .day-mini{background:var(--white);border-radius:12px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1rem 1.25rem;}
+  .day-mini-title{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .day-mini-title::before{content:'';width:14px;height:1px;background:var(--red);}
+  .day-mini-sub{font-size:10.5px;color:var(--text2);font-style:italic;margin-bottom:12px;line-height:1.4;}
+  .tl-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+  .tl-col{display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .tl-time-badge{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:var(--red);background:#FFF0F0;border:1px solid #FFCCCC;border-radius:6px;padding:2px 6px;white-space:nowrap;}
+  .tl-app-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid var(--white);box-shadow:0 0 0 1.5px var(--border);}
+  .dot-spotify{background:#1DB954;}
+  .dot-tiktok{background:var(--brown);}
+  .dot-ig{background:#E1306C;}
+  .dot-pinterest{background:#E60023;}
+  .tl-app-name{font-size:9px;font-weight:700;text-align:center;line-height:1.2;}
+  .tl-app-desc{font-size:9px;color:var(--text2);text-align:center;line-height:1.3;font-style:italic;}
+  .n-spotify{color:#1DB954;}
+  .n-tiktok{color:var(--brown);}
+  .n-ig{color:#E1306C;}
+  .n-pinterest{color:#E60023;}
 
-  /* ── BADGES ── */
-  .badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  .badge-red { background: var(--red-light); color: var(--red); }
-  .badge-amber { background: var(--amber-light); color: var(--amber); }
-  .badge-green { background: var(--green-light); color: var(--green); }
-  .badge-purple { background: var(--purple-pale); color: var(--purple); }
+  /* conector línea horizontal */
+  .tl-connector{display:flex;align-items:center;justify-content:center;padding:0 2px;}
+  .tl-connector-line{height:1px;background:var(--border);flex:1;}
 
-  /* ── CARD GRID ── */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-  }
-  .card {
-    background: var(--white);
-    border: 1px solid var(--gray-border);
-    border-radius: 12px;
-    padding: 1.25rem;
-  }
-  .card-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--text-sec);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .card-body {
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.55;
-  }
+  /* SECCIONES COMPLEMENTARIAS */
+  .day-section{background:var(--white);border-radius:16px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1.5rem 1.75rem;margin-bottom:1.5rem;}
+  .section-label{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .section-label::before{content:'';width:16px;height:1px;background:var(--red);}
+  .section-narrative{font-size:11.5px;color:var(--text2);font-style:italic;margin-bottom:1.1rem;line-height:1.5;}
 
-  /* ── TENSION ── */
-  .tension {
-    display: grid;
-    grid-template-columns: 1fr 80px 1fr;
-    gap: 16px;
-    align-items: center;
-  }
-  .tension-box {
-    border-radius: 12px;
-    padding: 1.25rem;
-  }
-  .tension-fear {
-    background: var(--red-light);
-    border: 1px solid #F09595;
-  }
-  .tension-desire {
-    background: var(--purple-pale);
-    border: 1px solid var(--purple-mid);
-  }
-  .tension-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .tension-fear .tension-label { color: var(--red); }
-  .tension-desire .tension-label { color: var(--purple); }
-  .tension-item {
-    font-size: 12.5px;
-    margin-bottom: 5px;
-    padding-left: 12px;
-    position: relative;
-    line-height: 1.45;
-  }
-  .tension-item::before {
-    content: '·';
-    position: absolute; left: 0;
-    font-weight: 700;
-  }
-  .tension-fear .tension-item { color: #791F1F; }
-  .tension-desire .tension-item { color: #26215C; }
-  .tension-vs {
-    text-align: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: var(--text-sec);
-  }
+  /* Timeline detallado */
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{display:grid;grid-template-columns:68px 20px 1fr;gap:0 12px;align-items:flex-start;position:relative;padding-bottom:14px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-vline{position:absolute;left:76px;top:22px;width:1px;height:calc(100% - 8px);background:var(--border);}
+  .tl-time{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-align:right;padding-top:3px;}
+  .tl-dot2{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;border:2px solid var(--white);position:relative;z-index:1;}
+  .tl-content{padding-top:2px;}
+  .tl-app-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+  .tl-desc{font-size:11.5px;color:var(--text2);line-height:1.45;font-style:italic;}
 
-  /* ── HOOK BOXES ── */
-  .hook-box {
-    background: var(--dark2);
-    border-radius: 12px;
-    padding: 1.5rem 1.75rem;
-    margin-bottom: 12px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hook-box::before {
-    content: '';
-    position: absolute;
-    top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(83,74,183,0.3) 0%, transparent 70%);
-  }
-  .hook-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .hook-text {
-    font-family: 'DM Serif Display', serif;
-    font-size: 17px;
-    color: var(--white);
-    line-height: 1.5;
-    font-style: italic;
-  }
+  /* Cuentas */
+  .cuenta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:0.75rem;}
+  .cuenta-card{background:var(--beige);border-radius:10px;border:1px solid var(--border);padding:0.875rem 1rem;display:flex;align-items:flex-start;gap:10px;}
+  .cuenta-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:var(--white);font-family:'Syne',sans-serif;}
+  .cuenta-handle{font-size:12px;font-weight:700;color:var(--brown);font-family:'Syne',sans-serif;}
+  .cuenta-desc{font-size:10.5px;color:var(--text2);line-height:1.4;margin-top:2px;}
+  .extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+  .marcas-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;}
+  .chip-red{font-size:11px;padding:4px 12px;border-radius:20px;background:#FFF0F0;color:var(--red);border:1px solid #FFCCCC;font-weight:600;}
+  .chip-n{font-size:11px;padding:4px 12px;border-radius:20px;background:var(--beige);color:var(--text2);border:1px solid var(--border);font-weight:500;}
 
-  /* ── JOURNEY ── */
-  .journey { display: flex; flex-direction: column; gap: 0; }
-  .journey-step {
-    display: grid;
-    grid-template-columns: 44px 1fr;
-    gap: 16px;
-    position: relative;
-  }
-  .journey-step:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    left: 21px; top: 44px;
-    width: 2px;
-    height: calc(100% - 10px);
-    background: var(--gray-border);
-  }
-  .step-circle {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--dark2);
-    border: 2px solid var(--purple);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 600;
-    color: var(--purple-soft);
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .step-content {
-    background: var(--white);
-    border: 1px solid var(--gray-border);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-bottom: 12px;
-  }
-  .step-name {
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--purple);
-    margin-bottom: 10px;
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-  }
-  .step-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .step-item-label {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--text-sec);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .step-item-body {
-    font-size: 12.5px;
-    color: var(--text);
-    line-height: 1.5;
-  }
+  /* Grid 3 */
+  .three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem;}
+  .comp-card{background:var(--white);border-radius:14px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1.25rem;}
+  .comp-label{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:6px;}
+  .comp-label::before{content:'';width:14px;height:1px;background:var(--red);}
+  .comp-narrative{font-size:10.5px;color:var(--text2);font-style:italic;margin-bottom:10px;line-height:1.45;}
+  .pain-list{display:flex;flex-direction:column;gap:6px;}
+  .pain-item{display:flex;gap:7px;align-items:flex-start;padding:6px 8px;border-radius:7px;}
+  .p-high{background:#FFF5F5;border:1px solid #FFE0E0;}
+  .p-med{background:#FFFBF0;border:1px solid #F5E8C0;}
+  .pbadge{font-size:8px;font-weight:700;letter-spacing:0.5px;padding:2px 5px;border-radius:5px;flex-shrink:0;margin-top:1px;}
+  .pb-r{background:#FFE8E8;color:var(--red);}
+  .pb-a{background:#FFF3D0;color:#8B6000;}
+  .ptext{font-size:11px;color:var(--text);line-height:1.4;}
+  .journey-list{display:flex;flex-direction:column;gap:9px;}
+  .j-step{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:flex-start;}
+  .j-num{width:24px;height:24px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--white);flex-shrink:0;font-family:'Syne',sans-serif;}
+  .j-name{font-size:12px;font-weight:700;color:var(--brown);font-family:'Syne',sans-serif;}
+  .j-msg{font-size:10.5px;color:var(--text2);font-style:italic;line-height:1.35;}
+  .ch-list{display:flex;flex-direction:column;gap:6px;}
+  .ch-row{display:flex;align-items:center;gap:7px;}
+  .ch-name{font-size:10.5px;font-weight:600;color:var(--brown);width:95px;flex-shrink:0;}
+  .ch-track{flex:1;height:4px;background:var(--beige2);border-radius:10px;}
+  .ch-fill{height:4px;border-radius:10px;}
+  .ch-pct{font-size:10px;color:var(--text2);width:28px;text-align:right;}
+  .ch-aud{font-size:8.5px;padding:1px 6px;border-radius:7px;font-weight:600;flex-shrink:0;}
+  .ca-d{background:#FFF0F0;color:var(--red);}
+  .ca-p{background:#FFF8E8;color:#8B6000;}
+  .ca-b{background:#F0F8F0;color:#3B6D11;}
 
-  /* ── CHANNELS ── */
-  .channel-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--gray-border);
-  }
-  .channel-row:last-child { border-bottom: none; }
-  .ch-name { font-size: 13px; font-weight: 500; width: 130px; flex-shrink: 0; }
-  .ch-bar-wrap { flex: 1; height: 6px; background: var(--gray-light); border-radius: 10px; }
-  .ch-bar { height: 6px; border-radius: 10px; background: var(--purple); }
-  .ch-pct { font-size: 12px; color: var(--text-sec); width: 36px; text-align: right; }
-  .ch-audience {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 500;
-    width: 100px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-  .ch-aud-prospect { background: var(--purple-pale); color: var(--purple); }
-  .ch-aud-parent { background: var(--amber-light); color: var(--amber); }
-  .ch-aud-both { background: var(--green-light); color: var(--green); }
+  .aha-box{background:var(--white);border-radius:14px;border:1px solid var(--border);border-left:3px solid var(--red);padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+  .aha-tag{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .aha-tag::before{content:'';width:16px;height:1px;background:var(--red);}
+  .aha-text{font-size:13px;color:var(--brown);font-style:italic;line-height:1.75;}
+  .aha-text strong{font-style:normal;color:var(--red);font-weight:700;}
 
-  /* ── INSIGHTS ── */
-  .insight-list { display: flex; flex-direction: column; gap: 10px; }
-  .insight-item {
-    display: flex;
-    gap: 14px;
-    background: var(--white);
-    border: 1px solid var(--gray-border);
-    border-radius: 12px;
-    padding: 1.1rem 1.25rem;
-    align-items: flex-start;
-  }
-  .insight-icon {
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .insight-icon-purple { background: var(--purple-pale); }
-  .insight-icon-red { background: var(--red-light); }
-  .insight-icon-green { background: var(--green-light); }
-  .insight-icon-amber { background: var(--amber-light); }
-  .insight-tipo {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--text-sec);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .insight-text {
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.6;
-  }
-  .insight-text strong { font-weight: 600; }
+  .msgs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem;}
+  .msg-item{background:var(--white);border-radius:0 10px 10px 0;border:1px solid var(--border);border-left:3px solid var(--red);padding:0.875rem 1rem;}
+  .msg-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:4px;}
+  .msg-text{font-size:11.5px;color:var(--brown);font-style:italic;line-height:1.45;}
 
-  /* ── METRICS ROW ── */
-  .metrics-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 1.5rem;
-  }
-  .metric-card {
-    background: var(--dark2);
-    border-radius: 12px;
-    padding: 1.25rem;
-    text-align: center;
-  }
-  .metric-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .metric-label-card {
-    font-size: 11px;
-    color: var(--purple-soft);
-    line-height: 1.4;
-  }
+  .est-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem;}
+  .est-card{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:0.875rem;}
+  .est-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:5px;}
+  .est-body{font-size:11px;color:var(--text);line-height:1.55;}
+  .est-body strong{color:var(--red-dark);font-weight:700;}
 
-  /* ── FOOTER ── */
-  .footer {
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gray-border);
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-sec);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  .insight-final{background:var(--brown);border-radius:14px;padding:1.75rem 2rem;text-align:center;}
+  .if-tag{font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--beige3);font-weight:600;margin-bottom:10px;}
+  .if-quote{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--white);line-height:1.5;max-width:700px;margin:0 auto;}
+  .if-quote span{color:var(--gold);}
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .cover { animation: fadeUp 0.6s ease both; }
-  .section { animation: fadeUp 0.5s ease both; }
-  .section:nth-child(2) { animation-delay: 0.05s; }
-  .section:nth-child(3) { animation-delay: 0.10s; }
-  .section:nth-child(4) { animation-delay: 0.15s; }
-  .section:nth-child(5) { animation-delay: 0.20s; }
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:1rem;}
+  .sec-ht{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--brown);white-space:nowrap;}
+  .sec-hl{flex:1;height:1px;background:var(--border);}
+  .footer{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;border-top:1px solid var(--border);margin-top:1.5rem;}
+  .footer-t{font-size:10px;color:var(--beige3);letter-spacing:1px;text-transform:uppercase;}
 
-  @media print {
-    body { background: white; }
-    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .hook-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .metric-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  }
-
-  @media (max-width: 640px) {
-    .cover { padding: 2rem 1.5rem; }
-    .cover-title { font-size: 36px; }
-    .cover-meta { display: none; }
-    .tension { grid-template-columns: 1fr; }
-    .tension-vs { display: none; }
-    .step-grid { grid-template-columns: 1fr; }
-    .metrics-row { grid-template-columns: 1fr; }
+  @media(max-width:800px){
+    .hero,.three-grid,.msgs-grid,.est-grid,.cuenta-grid,.extras-grid{grid-template-columns:1fr;}
+    .tension{grid-template-columns:1fr;}
+    .t-vs{display:none;}
+    .tl-grid{grid-template-columns:repeat(3,1fr);}
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-meta">
-      <p>CONFIDENCIAL</p>
-      <p>UAO · 2025</p>
-      <p>V1.0</p>
-    </div>
-    <div class="cover-eyebrow">Buyer Persona Ejecutivo · Mercadeo y Negocios Internacionales</div>
-    <div class="cover-title">El Pragmático<br>Digital</div>
-    <div class="cover-sub">Universidad Autónoma de Occidente · Cali, Colombia</div>
-    <div class="cover-profile">
-      <div class="avatar">PD</div>
-      <div class="avatar-info">
-        <h2>Sofía / Sebastián</h2>
-        <p>Bachiller 16–19 años · Cali / Valle del Cauca · Estrato 3, 4 y 5</p>
-      </div>
-    </div>
-    <div class="cover-pills">
-      <span class="pill">Decisor influenciador</span>
-      <span class="pill">Alta ansiedad económica</span>
-      <span class="pill">Gen Z hiperconectado</span>
-      <span class="pill">+10h/día online</span>
-      <span class="pill">29.9% planea emprender</span>
-    </div>
-  </div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="col-left">
 
-  <!-- MÉTRICAS CLAVE -->
-  <div class="metrics-row">
-    <div class="metric-card">
-      <div class="metric-num">71%</div>
-      <div class="metric-label-card">Tasa de cotización laboral regional de egresados UAO (SPE)</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-num">87%</div>
-      <div class="metric-label-card">Absorbidos en sectores de servicios y logística del Valle del Cauca</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-num">+10h</div>
-      <div class="metric-label-card">Horas diarias en línea. Consumo de video vertical a 1.5x velocidad</div>
-    </div>
-  </div>
+      <!-- AVATAR SVG ILUSTRADO -->
+      <div class="avatar-wrap">
+        <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fondo piel cálida -->
+          <rect width="100" height="100" fill="#F5ECD7"/>
+          <!-- Cuerpo / hombros -->
+          <ellipse cx="50" cy="118" rx="38" ry="30" fill="#C0001A"/>
+          <!-- Cuello -->
+          <rect x="42" y="70" width="16" height="18" rx="4" fill="#D4956A"/>
+          <!-- Cabeza -->
+          <ellipse cx="50" cy="52" rx="22" ry="24" fill="#C8784A"/>
+          <!-- Cabello largo oscuro ondulado -->
+          <ellipse cx="50" cy="38" rx="24" ry="16" fill="#1A0A00"/>
+          <ellipse cx="28" cy="55" rx="8" ry="18" fill="#1A0A00"/>
+          <ellipse cx="72" cy="55" rx="8" ry="18" fill="#1A0A00"/>
+          <ellipse cx="50" cy="32" rx="20" ry="10" fill="#1A0A00"/>
+          <!-- Mechones frontales -->
+          <ellipse cx="36" cy="45" rx="5" ry="12" fill="#1A0A00"/>
+          <ellipse cx="64" cy="45" rx="5" ry="12" fill="#1A0A00"/>
+          <!-- Ojos -->
+          <ellipse cx="42" cy="52" rx="4" ry="3.5" fill="#FFFFFF"/>
+          <ellipse cx="58" cy="52" rx="4" ry="3.5" fill="#FFFFFF"/>
+          <circle cx="43" cy="52" r="2.2" fill="#1A0A00"/>
+          <circle cx="59" cy="52" r="2.2" fill="#1A0A00"/>
+          <circle cx="43.8" cy="51.2" r="0.7" fill="#FFFFFF"/>
+          <circle cx="59.8" cy="51.2" r="0.7" fill="#FFFFFF"/>
+          <!-- Cejas -->
+          <path d="M38 47.5 Q42 46 46 47.5" stroke="#1A0A00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M54 47.5 Q58 46 62 47.5" stroke="#1A0A00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Nariz -->
+          <path d="M49 55 Q47 59 49 60 Q51 60 53 59 Q55 58 53 55" stroke="#B06040" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <!-- Boca sonrisa -->
+          <path d="M44 64 Q50 69 56 64" stroke="#8B3A1A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <!-- Auriculares hint -->
+          <circle cx="28" cy="53" r="4" fill="#C0001A" opacity="0.7"/>
+          <circle cx="72" cy="53" r="4" fill="#C0001A" opacity="0.7"/>
+          <!-- Aretes pequeños -->
+          <circle cx="28.5" cy="59" r="2" fill="#F5C97A"/>
+          <circle cx="71.5" cy="59" r="2" fill="#F5C97A"/>
+        </svg>
+      </div>
 
-  <!-- 01. RESUMEN ESTRATÉGICO -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">01</div>
-      <div class="sec-title">Resumen Estratégico</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th style="width:220px">Variable</th><th>Detalle</th></tr></thead>
-        <tbody>
-          <tr><td class="td-label">Perfil resumido</td><td>Bachiller pragmático, hiperconectado, con mentalidad de emprendedor precoz y hambre de independencia financiera rápida</td></tr>
-          <tr><td class="td-label">Rol en la decisión</td><td>Influenciador principal — agenda la conversación, selecciona opciones y presiona al padre/madre que es el financiador final</td></tr>
-          <tr><td class="td-label">Nivel de decisión</td><td>Medio-alto: propone y defiende, pero requiere aval familiar para ejecutar</td></tr>
-          <tr><td class="td-label">Tensión central</td><td>Miedo a la irrelevancia laboral y deuda perpetua <strong>vs.</strong> deseo de monetización global con identidad auténtica</td></tr>
-          <tr><td class="td-label">Insight clave</td><td>No busca una carrera. Busca una <strong>ventaja injusta técnica</strong> para dominar el mercado sin perder su autenticidad</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <div class="profile-name">Daniela</div>
+      <div class="profile-role">Pragmática Digital</div>
+      <div class="profile-sub" style="margin:4px 0 0;">17 años · Estrato 4<br>Bochalema, Cali</div>
 
-  <!-- 02. PERFIL DEMOGRÁFICO -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">02</div>
-      <div class="sec-title">Perfil Demográfico y Corporativo</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th style="width:220px">Variable</th><th>Detalle</th></tr></thead>
-        <tbody>
-          <tr><td class="td-label">Edad</td><td>16 a 19 años</td></tr>
-          <tr><td class="td-label">Etapa vital</td><td>Último año de bachillerato o recién graduado / gap year</td></tr>
-          <tr><td class="td-label">Ubicación</td><td>Cali y Valle del Cauca (foco principal)</td></tr>
-          <tr><td class="td-label">Estrato socioeconómico</td><td>3, 4 y 5</td></tr>
-          <tr><td class="td-label">Nivel educativo actual</td><td>Educación media / bachillerato</td></tr>
-          <tr><td class="td-label">Conectividad</td><td>+10 horas diarias en línea, consumo de video vertical a 1.5x velocidad</td></tr>
-          <tr><td class="td-label">Unidad de decisión</td><td>Estudiante <span class="badge badge-purple">Influenciador</span> + Padre/madre <span class="badge badge-amber">Financiador y validador</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- 03. PERFIL PSICOGRÁFICO -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">03</div>
-      <div class="sec-title">Perfil Psicográfico</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="card-grid" style="margin-bottom:1.5rem;">
-      <div class="card">
-        <div class="card-label">Mentalidad</div>
-        <div class="card-body">Emprendedor precoz. ROI primero. Desconfía del sistema tradicional pero lo usa estratégicamente.</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Valores</div>
-        <div class="card-body">Autenticidad · Transparencia · Libertad financiera · Impacto real · Identidad digital propia</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Ambiciones</div>
-        <div class="card-body">Nómada digital · Freelancer bilingüe en USD/EUR · Crear empresa propia · Dirigir algoritmos</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Arquetipos aspiracionales</div>
-        <div class="card-body"><em>Marketing Girlies</em> (vlogs aspiracionales) · <em>Corporate Baddies</em> (éxito con autenticidad)</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Drivers emocionales</div>
-        <div class="card-body">Orgullo familiar · Estatus entre pares · Independencia · No ser carga económica</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Drivers racionales</div>
-        <div class="card-body">Empleabilidad medible · ROI del título · Asequibilidad · Certificaciones parciales por año</div>
-      </div>
-    </div>
-    <!-- TENSIÓN -->
-    <div class="tension">
-      <div class="tension-box tension-fear">
-        <div class="tension-label">⚠ Miedos</div>
-        <div class="tension-item">IA reemplaza su profesión antes de graduarse</div>
-        <div class="tension-item">Título inútil = deuda perpetua</div>
-        <div class="tension-item">Sueldo de "cacahuates"</div>
-        <div class="tension-item">Ser un "todero" generalista sin valor</div>
-        <div class="tension-item">Estigma: "la creatividad no da plata"</div>
-      </div>
-      <div class="tension-vs">VS</div>
-      <div class="tension-box tension-desire">
-        <div class="tension-label">🚀 Deseos</div>
-        <div class="tension-item">Monetización global en USD/EUR</div>
-        <div class="tension-item">Freelancer / nómada digital</div>
-        <div class="tension-item">Emprender en 5 años (29.9%)</div>
-        <div class="tension-item">Dirigir algoritmos, no obedecerlos</div>
-        <div class="tension-item">Identidad auténtica + éxito visible</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 04. PAIN POINTS -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">04</div>
-      <div class="sec-title">Pain Points Críticos</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>Problema</th><th>Impacto en decisión</th><th>Nivel</th><th>Tipo</th></tr></thead>
-        <tbody>
-          <tr><td>Costo de matrícula percibido como prohibitivo</td><td>Primer filtro eliminatorio. Sin asequibilidad no se evalúan otros atributos</td><td><span class="badge badge-red">CRÍTICO</span></td><td>Racional</td></tr>
-          <tr><td>Miedo a graduarse desempleado o mal pagado</td><td>Parálisis de decisión. Prefiere SENA antes que arriesgarse 5 años</td><td><span class="badge badge-red">CRÍTICO</span></td><td>Emocional</td></tr>
-          <tr><td>Obsolescencia profesional por IA</td><td>Descalifica carreras "creativas" sin dominio técnico de IA demostrable</td><td><span class="badge badge-red">ALTO</span></td><td>Racional</td></tr>
-          <tr><td>Estigma familiar: "la creatividad no da plata"</td><td>Conflicto interno y necesidad de validar con datos duros ante la familia</td><td><span class="badge badge-amber">MEDIO</span></td><td>Emocional</td></tr>
-          <tr><td>Síndrome del impostor académico</td><td>Sensación de no ser suficiente; busca "segundas oportunidades"</td><td><span class="badge badge-amber">MEDIO</span></td><td>Emocional</td></tr>
-          <tr><td>Costo de oportunidad del SENA y trabajo inmediato</td><td>En estrato 3, "trabajar ya" compite directamente con la decisión universitaria</td><td><span class="badge badge-amber">MEDIO</span></td><td>Racional</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- 05. OBJETIVOS Y KPIs -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">05</div>
-      <div class="sec-title">Objetivos y KPIs del Prospecto</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>Objetivo</th><th>Indicador de éxito esperado</th><th>Prioridad</th></tr></thead>
-        <tbody>
-          <tr><td>Garantía de empleo real tras graduarse</td><td>Tasa de empleabilidad de egresados (UAO: 71% cotización SPE · 87% absorbido en servicios y logística)</td><td><span class="badge badge-red">MÁXIMA</span></td></tr>
-          <tr><td>Matrícula asequible sin deuda paralizante</td><td>Financiación directa UAO sin intereses durante el período de estudio</td><td><span class="badge badge-red">MÁXIMA</span></td></tr>
-          <tr><td>Habilidades reales en IA, datos y tecnología</td><td>Uso de HubSpot, ChatGPT e Ingeniería de Prompts desde semestres tempranos</td><td><span class="badge badge-amber">ALTA</span></td></tr>
-          <tr><td>Red de contactos empresariales reales</td><td>Convenios con empresas, prácticas de alto nivel, networking tangible demostrable</td><td><span class="badge badge-amber">ALTA</span></td></tr>
-          <tr><td>Posibilidad de emprender o freelancear global</td><td>Egresados con empresas propias o proyectos internacionales documentados</td><td><span class="badge badge-green">MEDIA</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- 06. COMPORTAMIENTO DE COMPRA -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">06</div>
-      <div class="sec-title">Comportamiento de Decisión</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap" style="margin-bottom:1rem;">
-      <table>
-        <thead><tr><th style="width:200px">Variable</th><th>Detalle</th></tr></thead>
-        <tbody>
-          <tr><td class="td-label">Cómo investiga</td><td>Reddit y Quora de forma anónima buscando verdades sin filtro sobre salarios. TikTok e Instagram para referentes aspiracionales</td></tr>
-          <tr><td class="td-label">Cómo decide</td><td>Primero valida emocionalmente con pares y redes. Luego construye el argumento racional para convencer a los padres financiadores</td></tr>
-          <tr><td class="td-label">Qué valida antes</td><td>Salarios reales de egresados · Testimonios sin guión · Opciones de financiación · Tecnología real en el pensum</td></tr>
-          <tr><td class="td-label">Factores de conversión</td><td>Simulaciones prácticas (aha moment) · Financiación clara · Testimonios con empleos y salarios reales visibles</td></tr>
-          <tr><td class="td-label">Radar anti-humo</td><td>Escepticismo radical hacia publicidad tradicional, promesas corporativas solemnes y lenguaje institucional genérico</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>Objeción</th><th>Quién la plantea</th><th>Cómo neutralizarla</th></tr></thead>
-        <tbody>
-          <tr><td>"Es muy caro y no garantiza nada"</td><td>Padre / madre</td><td>ROI con datos SPE + financiación directa UAO sin intereses</td></tr>
-          <tr><td>"Mejor que trabaje ya"</td><td>Familia estrato 3</td><td>Modalidad dual: estudiar + trabajar + experiencia certificada</td></tr>
-          <tr><td>"La IA va a reemplazar ese trabajo"</td><td>Prospecto</td><td>Aha moment: la carrera enseña a dirigir la IA, no a competir con ella</td></tr>
-          <tr><td>"Las otras universidades son mejores"</td><td>Pares / familia</td><td>Diferenciador concreto: IA + datos + transmedia desde semestre 1</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- 07. BUYER JOURNEY -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">07</div>
-      <div class="sec-title">Buyer Journey</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="journey">
-      <div class="journey-step">
-        <div class="step-circle">1</div>
-        <div class="step-content">
-          <div class="step-name">Conciencia — "¿Qué voy a estudiar?"</div>
-          <div class="step-grid">
-            <div><div class="step-item-label">Necesidad</div><div class="step-item-body">Orientación vocacional y validación de que la carrera tiene futuro real y bien remunerado</div></div>
-            <div><div class="step-item-label">Contenido ideal</div><div class="step-item-body">TikTok de "un día en la vida" de egresados reales con salarios visibles, sin edición corporativa</div></div>
-            <div><div class="step-item-label">Mensaje estratégico</div><div class="step-item-body"><em>"El mercadeo de hoy no es hacer posts. Es mover el dinero del mundo."</em></div></div>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-icon">🎓</span>
+          <div>
+            <span class="data-label">Etapa académica</span>
+            <span class="data-val">Último grado de secundaria</span>
+            <div class="data-narrative">A punto de tomar la decisión más importante de su vida.</div>
           </div>
         </div>
-      </div>
-      <div class="journey-step">
-        <div class="step-circle">2</div>
-        <div class="step-content">
-          <div class="step-name">Consideración — "¿La UAO es buena opción?"</div>
-          <div class="step-grid">
-            <div><div class="step-item-label">Necesidad</div><div class="step-item-body">Comparar UAO vs ICESI, Javeriana y SENA en costo-beneficio real</div></div>
-            <div><div class="step-item-label">Contenido ideal</div><div class="step-item-body">Testimonios Reddit-style sin guión · Tour laboratorios IA · Datos SPE de empleabilidad</div></div>
-            <div><div class="step-item-label">Mensaje estratégico</div><div class="step-item-body"><em>"No compitas con la IA. Dirígela desde la UAO."</em></div></div>
+        <div class="data-row">
+          <span class="data-icon">🏠</span>
+          <div>
+            <span class="data-label">Su mundo en casa</span>
+            <span class="data-val">Mamá, Papá, Hermano y su gato 🐱</span>
+            <div class="data-narrative">Su familia la apoya, pero también la cuestiona.</div>
           </div>
         </div>
-      </div>
-      <div class="journey-step">
-        <div class="step-circle">3</div>
-        <div class="step-content">
-          <div class="step-name">Decisión — "¿Puedo pagarlo y vale la pena?"</div>
-          <div class="step-grid">
-            <div><div class="step-item-label">Necesidad</div><div class="step-item-body">Validar asequibilidad y construir argumento sólido para convencer a la familia financiadora</div></div>
-            <div><div class="step-item-label">Contenido ideal</div><div class="step-item-body">Calculadora de financiación · Egresados con empresa propia · Escuela de Padres digital</div></div>
-            <div><div class="step-item-label">Mensaje estratégico</div><div class="step-item-body"><em>"Paga lo mismo que en tu colegio. El resto, cuando seas profesional."</em></div></div>
+        <div class="data-row">
+          <span class="data-icon">📍</span>
+          <div>
+            <span class="data-label">Dónde vive</span>
+            <span class="data-val">Bochalema, Cali — Valle del Cauca</span>
+            <div class="data-narrative">Su ciudad es su base. El mundo, su mercado.</div>
           </div>
         </div>
-      </div>
-      <div class="journey-step">
-        <div class="step-circle">4</div>
-        <div class="step-content">
-          <div class="step-name">Retención / Embajador — "¿Valió la pena?"</div>
-          <div class="step-grid">
-            <div><div class="step-item-label">Necesidad</div><div class="step-item-body">Confirmación de la decisión y sentido de pertenencia a élite productiva</div></div>
-            <div><div class="step-item-label">Contenido ideal</div><div class="step-item-body">Comunidad activa · Certificaciones parciales · Visibilidad de logros en redes</div></div>
-            <div><div class="step-item-label">Mensaje estratégico</div><div class="step-item-body"><em>"Tu red de contactos empieza aquí. Tu oficina no tiene límites."</em></div></div>
+        <div class="data-row">
+          <span class="data-icon">🎯</span>
+          <div>
+            <span class="data-label">Lo que la mueve</span>
+            <span class="data-val">Contenido · Música · Baile · Videojuegos · Lectura · Viajar</span>
+            <div class="data-narrative">No solo consume contenido — lo crea, lo baila y lo vive.</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 08. CANALES -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">08</div>
-      <div class="sec-title">Canales y Consumo Digital</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="card" style="padding:1.5rem;">
-      <div class="channel-row">
-        <span class="ch-name">TikTok</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:95%"></div></div>
-        <span class="ch-pct">95%</span>
-        <span class="ch-audience ch-aud-prospect">Prospecto</span>
+    <div class="col-right">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div class="hero-tag">Buyer Persona · UAO 2026</div>
+          <div class="hero-title">Mercadeo y<br><span>Negocios Internacionales</span></div>
+        </div>
+        <span class="year-pill">UAO · 2026</span>
       </div>
-      <div class="channel-row">
-        <span class="ch-name">Instagram</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:88%"></div></div>
-        <span class="ch-pct">88%</span>
-        <span class="ch-audience ch-aud-prospect">Prospecto</span>
-      </div>
-      <div class="channel-row">
-        <span class="ch-name">Reddit / Quora</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:75%; background:var(--purple-mid)"></div></div>
-        <span class="ch-pct">75%</span>
-        <span class="ch-audience ch-aud-prospect">Prospecto</span>
-      </div>
-      <div class="channel-row">
-        <span class="ch-name">Google SEM</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:80%; background:var(--green)"></div></div>
-        <span class="ch-pct">80%</span>
-        <span class="ch-audience ch-aud-both">Ambos</span>
-      </div>
-      <div class="channel-row">
-        <span class="ch-name">Pinterest</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:60%; background:var(--purple-mid)"></div></div>
-        <span class="ch-pct">60%</span>
-        <span class="ch-audience ch-aud-prospect">Prospecto</span>
-      </div>
-      <div class="channel-row">
-        <span class="ch-name">WhatsApp</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:50%; background:var(--amber)"></div></div>
-        <span class="ch-pct">50%</span>
-        <span class="ch-audience ch-aud-parent">Padres</span>
-      </div>
-      <div class="channel-row">
-        <span class="ch-name">Facebook</span>
-        <div class="ch-bar-wrap"><div class="ch-bar" style="width:30%; background:var(--amber)"></div></div>
-        <span class="ch-pct">30%</span>
-        <span class="ch-audience ch-aud-parent">Padres</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- 09. MENSAJES -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">09</div>
-      <div class="sec-title">Mensajes de Marketing Recomendados</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="hook-box">
-      <div class="hook-eyebrow">Propuesta de valor maestra</div>
-      <div class="hook-text">"La UAO no te enseña Mercadeo. Te da la ventaja injusta técnica para dominar el mercado global sin perder quien eres."</div>
-    </div>
-    <div class="hook-box">
-      <div class="hook-eyebrow">Hook principal — Prospecto Gen Z</div>
-      <div class="hook-text">"No estudies Mercadeo para hacer posts. Estúdialo para mover la aguja del dinero."</div>
-    </div>
-    <div class="hook-box">
-      <div class="hook-eyebrow">Hook principal — Padres financiadores</div>
-      <div class="hook-text">"Tu esfuerzo vale. El 71% de nuestros egresados trabaja antes de un año. El resto es historia."</div>
-    </div>
-    <div class="tbl-wrap" style="margin-top:1rem;">
-      <table>
-        <thead><tr><th>Ángulo</th><th>Mensaje estratégico</th><th>Etapa funnel</th></tr></thead>
-        <tbody>
-          <tr><td>IA como aliada</td><td><em>"No compitas con la IA. Dirígela. Tu estrategia no tiene fronteras."</em></td><td>Awareness</td></tr>
-          <tr><td>Especialización global</td><td><em>"En un mundo de toderos, sé el especialista que las empresas globales compiten por contratar."</em></td><td>Consideración</td></tr>
-          <tr><td>Libertad geográfica</td><td><em>"Gana en el mundo, vive en casa. Tu oficina no tiene límites."</em></td><td>Consideración</td></tr>
-          <tr><td>Asequibilidad</td><td><em>"Paga lo mismo que en tu colegio y el resto después de graduarte, sin intereses."</em></td><td>Decisión</td></tr>
-          <tr><td>ROI para padres</td><td><em>"El 87% de nuestros egresados es absorbido en sectores de alta demanda. No es fe ciega, son datos."</em></td><td>Decisión</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <div class="dolor-box">
+        <div class="dolor-tag">Su dolor real — La frase que la frena</div>
+        <div class="dolor-quote">"Vas a estudiar eso, te vas a morir de hambre."</div>
+        <div class="dolor-context">
+          Estigma documentado por Melisa en <em>Bien Dateado</em> — Señal Colombia (2024). La frase que paraliza a miles de jóvenes colombianos en su decisión vocacional.<br>
+          <a href="https://www.youtube.com/watch?v=L1VQfs199cU" target="_blank">▶ Ver video · min. 08:02–08:10</a>
+        </div>
+      </div>
 
-  <!-- 10. ESTRATEGIA DE CAMPAÑA -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">10</div>
-      <div class="sec-title">Estrategia Recomendada de Campaña</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th style="width:200px">Variable</th><th>Recomendación</th></tr></thead>
-        <tbody>
-          <tr><td class="td-label">Objetivo</td><td>Generación de leads calificados (prospecto + unidad familiar) con intención real de inscripción</td></tr>
-          <tr><td class="td-label">Tipo de campaña</td><td>Dual: Awareness emocional Gen Z (TikTok/IG) + Conversión racional para padres (Facebook/WhatsApp/Google)</td></tr>
-          <tr><td class="td-label">Segmentación prospecto</td><td>16-19 años · Cali/Valle · Intereses: emprendimiento, IA, negocios, diseño, contenido digital</td></tr>
-          <tr><td class="td-label">Segmentación padres</td><td>35-55 años · Cali/Valle · Estratos 3-5 · Intereses: educación, familia, empleo, finanzas personales</td></tr>
-          <tr><td class="td-label">Creativos ideales</td><td>Video vertical sin edición corporativa: egresados mostrando trabajo, salario y estilo de vida real</td></tr>
-          <tr><td class="td-label">CTAs sugeridos</td><td>"Calcula tu financiación" · "Habla con un egresado real" · "Agenda tu simulación práctica"</td></tr>
-          <tr><td class="td-label">Oportunidad táctica</td><td>SEM post-resultados UNAL/UNIVALLE: captar frustrados en ventana de 72 horas con urgencia positiva</td></tr>
-          <tr><td class="td-label">Riesgo principal</td><td>Cualquier pieza con tono corporativo o institucional generará rechazo inmediato por el radar anti-humo Gen Z</td></tr>
-        </tbody>
-      </table>
+      <div class="tension">
+        <div class="t-box t-fear">
+          <div class="t-label">⚠ Lo que la paraliza</div>
+          <div class="t-item">La IA reemplaza su carrera antes de graduarse</div>
+          <div class="t-item">Título + deuda = trampa financiera</div>
+          <div class="t-item">Ser una más del montón: el "todero" genérico</div>
+          <div class="t-item">Que la creatividad no pague las cuentas</div>
+        </div>
+        <div class="t-vs">VS</div>
+        <div class="t-box t-desire">
+          <div class="t-label">🚀 Lo que la impulsa</div>
+          <div class="t-item">Facturar en dólares desde Cali</div>
+          <div class="t-item">Ser freelancer global con identidad propia</div>
+          <div class="t-item">Dirigir algoritmos, no obedecerlos</div>
+          <div class="t-item">Emprender sin pedir permiso</div>
+        </div>
+      </div>
+
+      <!-- DÍA DIGITAL MINI dentro del hero -->
+      <div class="day-mini">
+        <div class="day-mini-title">Su día digital — Daniela conectada</div>
+        <div class="day-mini-sub">Cada hora tiene una plataforma. Aquí está la ventana para alcanzarla.</div>
+        <div style="display:flex;align-items:flex-start;gap:4px;">
+          <!-- bloque 1 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">5:00 am</div>
+            <div class="tl-app-dot dot-spotify">🎵</div>
+            <div class="tl-app-name n-spotify">Spotify</div>
+            <div class="tl-app-desc">Se arregla con Karol G a todo volumen</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <!-- bloque 2 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">6:00 am</div>
+            <div class="tl-app-dot dot-tiktok">▶</div>
+            <div class="tl-app-name n-tiktok">TikTok</div>
+            <div class="tl-app-desc">Scroll en la ruta al colegio, a 1.5x</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <!-- bloque 3 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">10:00 am</div>
+            <div class="tl-app-dot dot-ig">📸</div>
+            <div class="tl-app-name n-ig">Instagram</div>
+            <div class="tl-app-desc">30 min en el descanso del colegio</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <!-- bloque 4 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">3:00 pm</div>
+            <div class="tl-app-dot dot-tiktok">▶</div>
+            <div class="tl-app-name n-tiktok">TikTok + IG</div>
+            <div class="tl-app-desc">Peak de consumo en la ruta de regreso</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <!-- bloque 5 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">5:00 pm</div>
+            <div class="tl-app-dot dot-spotify">🎵</div>
+            <div class="tl-app-name n-spotify">Spotify</div>
+            <div class="tl-app-desc">En el gym, sin pantallas, puro ritmo</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <!-- bloque 6 -->
+          <div class="tl-col" style="flex:1;">
+            <div class="tl-time-badge">8:00 pm</div>
+            <div class="tl-app-dot dot-pinterest">📌</div>
+            <div class="tl-app-name n-pinterest">Pinterest</div>
+            <div class="tl-app-desc">Modo inspiración antes de dormir</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- 11. EXECUTIVE INSIGHTS -->
-  <div class="section">
-    <div class="sec-header">
-      <div class="sec-num">11</div>
-      <div class="sec-title">Executive Insights</div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="insight-list">
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-purple">💡</div>
+  <!-- CUENTAS QUE SIGUE -->
+  <div class="day-section">
+    <div class="section-label">Las cuentas que sigue</div>
+    <div class="section-narrative">Sus referentes moldean su visión del éxito, la moda y el estilo de vida que quiere alcanzar.</div>
+    <div class="cuenta-grid">
+      <div class="cuenta-card">
+        <div class="cuenta-avatar" style="background:var(--red);">KG</div>
         <div>
-          <div class="insight-tipo">Estructural</div>
-          <div class="insight-text"><strong>La venta real es a la unidad familiar, no al estudiante.</strong> El prospecto genera el interés pero el padre/madre ejerce el veto financiero. Requiere estrategia de doble vía con mensajes diferenciados por audiencia.</div>
+          <div class="cuenta-handle">@karolg</div>
+          <div class="cuenta-desc">Su mayor ícono. Mujer latina que rompió fronteras y factura en dólares sin perder su autenticidad. Exactamente lo que Daniela quiere ser.</div>
         </div>
       </div>
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-red">⚠️</div>
+      <div class="cuenta-card">
+        <div class="cuenta-avatar" style="background:var(--brown);">BB</div>
         <div>
-          <div class="insight-tipo">Riesgo crítico</div>
-          <div class="insight-text"><strong>El SENA es el competidor silencioso más peligroso.</strong> No compite en prestigio sino en velocidad de retorno económico. La UAO debe articular certificaciones parciales por año para neutralizarlo directamente.</div>
+          <div class="cuenta-handle">@badbunnypr</div>
+          <div class="cuenta-desc">Referente de identidad cultural y éxito global. Le demuestra que puedes venir del Caribe, hablar español y conquistar el mundo.</div>
         </div>
       </div>
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-green">⚡</div>
+      <div class="cuenta-card">
+        <div class="cuenta-avatar" style="background:#E1306C;">SH</div>
         <div>
-          <div class="insight-tipo">Quick win</div>
-          <div class="insight-text"><strong>Activar programa de Embajadores sin guión:</strong> egresados que publiquen en redes sus salarios reales y proyectos activos. Es el único formato que supera el radar anti-humo de la Gen Z.</div>
-        </div>
-      </div>
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-purple">🌐</div>
-        <div>
-          <div class="insight-tipo">Diferenciación</div>
-          <div class="insight-text"><strong>Posicionar la UAO como la única universidad en el Valle que enseña a dirigir IA desde semestre 1.</strong> No es un beneficio curricular — es el argumento directo contra la obsolescencia profesional.</div>
-        </div>
-      </div>
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-amber">🎯</div>
-        <div>
-          <div class="insight-tipo">Táctica de alta conversión</div>
-          <div class="insight-text"><strong>Campaña de rescate post-admisión UNAL/UNIVALLE:</strong> captar aspirantes no admitidos con mensaje de urgencia positiva. Ventana crítica de 72 horas tras publicación de resultados vía SEM y redes.</div>
-        </div>
-      </div>
-      <div class="insight-item">
-        <div class="insight-icon insight-icon-green">📊</div>
-        <div>
-          <div class="insight-tipo">Recomendación estratégica</div>
-          <div class="insight-text"><strong>Publicar el Observatorio de Egresados UAO</strong> con datos actualizados de salarios, empresas empleadoras y proyectos propios. Es la única prueba social que convence al padre escéptico y neutraliza la objeción "¿para qué sirve ese título?"</div>
+          <div class="cuenta-handle">@sheinofficial</div>
+          <div class="cuenta-desc">Moda accesible con estética aspiracional. Rápida, visual y siempre relevante — igual que Daniela quiere que sea su carrera.</div>
         </div>
       </div>
     </div>
+    <div class="extras-grid">
+      <div class="cuenta-card" style="background:var(--beige);">
+        <div class="cuenta-avatar" style="background:var(--gold);color:var(--brown);">🐾</div>
+        <div>
+          <div class="cuenta-handle" style="font-size:12px;color:var(--brown);">Animales en publicidad</div>
+          <div class="cuenta-desc">Cuando una marca usa animales, Daniela para el scroll. Su punto de conexión emocional más directo — una oportunidad creativa clave para la UAO.</div>
+        </div>
+      </div>
+      <div class="cuenta-card" style="background:var(--beige);">
+        <div class="cuenta-avatar" style="background:var(--red-dark);">🎬</div>
+        <div>
+          <div class="cuenta-handle" style="font-size:12px;color:var(--brown);">Domingos de arrunchis</div>
+          <div class="cuenta-desc">Netflix, cobija y buena compañía. Es su momento de recarga total — y cuando más receptiva está a contenido emocional y aspiracional.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1.1rem;">
+      <div class="section-label" style="margin-bottom:6px;">Las marcas que la representan</div>
+      <div class="marcas-chips">
+        <span class="chip-red">Adidas</span><span class="chip-n">Apple</span><span class="chip-n">Spotify</span>
+        <span class="chip-n">Netflix</span><span class="chip-red">Canva</span><span class="chip-n">Popsy</span><span class="chip-n">Shein</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AHA MOMENT -->
+  <div class="aha-box">
+    <div class="aha-tag">El Aha Moment de Daniela</div>
+    <div class="aha-text">El momento exacto en que Daniela deja de ver la carrera como una simple opción académica y empieza a visualizarla como una oportunidad real para construir el futuro y el estilo de vida que desea, sucede cuando descubre, a través de la campaña, <strong>experiencias reales, proyectos prácticos, oportunidades internacionales, conexión con marcas</strong> y <strong>testimonios auténticos de estudiantes y egresados</strong> que ya están creciendo profesionalmente en el mundo del marketing y los negocios.</div>
+  </div>
+
+  <!-- GRID 3 -->
+  <div class="three-grid">
+    <div class="comp-card">
+      <div class="comp-label">Lo que más le duele</div>
+      <div class="comp-narrative">Barreras reales antes de decidir. Ignorarlas en la campaña es perderla.</div>
+      <div class="pain-list">
+        <div class="pain-item p-high"><span class="pbadge pb-r">CRÍTICO</span><span class="ptext">Miedo a invertir 5 años sin empleo digno</span></div>
+        <div class="pain-item p-high"><span class="pbadge pb-r">CRÍTICO</span><span class="ptext">La matrícula como primer filtro eliminatorio</span></div>
+        <div class="pain-item p-high"><span class="pbadge pb-r">ALTO</span><span class="ptext">Terror a que la IA haga obsoleta su carrera</span></div>
+        <div class="pain-item p-med"><span class="pbadge pb-a">MEDIO</span><span class="ptext">Síndrome del impostor frente a privadas</span></div>
+        <div class="pain-item p-med"><span class="pbadge pb-a">MEDIO</span><span class="ptext">"Mejor trabaja ya" — la presión familiar</span></div>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label">Su camino hasta decir sí</div>
+      <div class="comp-narrative">Daniela no decide sola ni de un día para otro. Este es su recorrido emocional.</div>
+      <div class="journey-list">
+        <div class="j-step"><div class="j-num">1</div><div><div class="j-name">Conciencia</div><div class="j-msg">"El mercadeo de hoy no es hacer posts. Es mover el dinero del mundo."</div></div></div>
+        <div class="j-step"><div class="j-num">2</div><div><div class="j-name">Consideración</div><div class="j-msg">"No compitas con la IA. Dirígela desde la UAO."</div></div></div>
+        <div class="j-step"><div class="j-num">3</div><div><div class="j-name">Decisión</div><div class="j-msg">"Paga lo mismo que en tu colegio. El resto, cuando seas profesional."</div></div></div>
+        <div class="j-step"><div class="j-num">4</div><div><div class="j-name">Embajadora</div><div class="j-msg">"Tu red empieza aquí. Tu oficina no tiene límites."</div></div></div>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label">Dónde está Daniela</div>
+      <div class="comp-narrative">Hay que hablarle donde vive — como sus referentes, no como una institución.</div>
+      <div class="ch-list">
+        <div class="ch-row"><span class="ch-name">TikTok</span><div class="ch-track"><div class="ch-fill" style="width:95%;background:var(--brown)"></div></div><span class="ch-pct">95%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Instagram</span><div class="ch-track"><div class="ch-fill" style="width:88%;background:#E1306C"></div></div><span class="ch-pct">88%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Reddit/Quora</span><div class="ch-track"><div class="ch-fill" style="width:75%;background:var(--red)"></div></div><span class="ch-pct">75%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Google SEM</span><div class="ch-track"><div class="ch-fill" style="width:80%;background:#3B6D11"></div></div><span class="ch-pct">80%</span><span class="ch-aud ca-b">Ambos</span></div>
+        <div class="ch-row"><span class="ch-name">WhatsApp</span><div class="ch-track"><div class="ch-fill" style="width:50%;background:#8B6000"></div></div><span class="ch-pct">50%</span><span class="ch-aud ca-p">Padres</span></div>
+        <div class="ch-row"><span class="ch-name">Facebook</span><div class="ch-track"><div class="ch-fill" style="width:30%;background:#8B6000"></div></div><span class="ch-pct">30%</span><span class="ch-aud ca-p">Padres</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENSAJES -->
+  <div class="sec-head"><div class="sec-ht">Mensajes que la mueven</div><div class="sec-hl"></div></div>
+  <div class="msgs-grid">
+    <div class="msg-item"><div class="msg-tag">La promesa maestra</div><div class="msg-text">"La UAO no te enseña Mercadeo. Te da la ventaja injusta técnica para dominar el mercado global sin perder quien eres."</div></div>
+    <div class="msg-item"><div class="msg-tag">Para Daniela — Gen Z</div><div class="msg-text">"No estudies Mercadeo para hacer posts. Estúdialo para mover la aguja del dinero."</div></div>
+    <div class="msg-item"><div class="msg-tag">Para sus padres</div><div class="msg-text">"Tu esfuerzo vale. El 71% de nuestros egresados trabaja antes de un año. El resto es historia."</div></div>
+    <div class="msg-item"><div class="msg-tag">Contra el miedo a la IA</div><div class="msg-text">"No compitas con la IA. Dirígela. Tu estrategia no tiene fronteras."</div></div>
+  </div>
+
+  <!-- ESTRATEGIA -->
+  <div class="sec-head"><div class="sec-ht">Estrategia de campaña recomendada</div><div class="sec-hl"></div></div>
+  <div class="est-grid">
+    <div class="est-card"><div class="est-tag">Tipo de campaña</div><div class="est-body"><strong>Dual:</strong> Awareness Gen Z (TikTok/IG) + Conversión racional padres (Facebook/WhatsApp/Google)</div></div>
+    <div class="est-card"><div class="est-tag">Creativo ideal</div><div class="est-body">Video vertical <strong>sin edición corporativa</strong> — egresadas mostrando trabajo real, salario y vida auténtica</div></div>
+    <div class="est-card"><div class="est-tag">CTAs que convierten</div><div class="est-body">· "Calcula tu financiación"<br>· "Habla con una egresada real"<br>· "Agenda tu simulación práctica"</div></div>
+    <div class="est-card"><div class="est-tag">Ventana táctica</div><div class="est-body">SEM post-resultados <strong>UNAL/UNIVALLE:</strong> 72 horas de oro para captar no admitidos</div></div>
+  </div>
+
+  <!-- INSIGHT FINAL -->
+  <div class="insight-final">
+    <div class="if-tag">Insight clave — La verdad incómoda</div>
+    <div class="if-quote">"Daniela no busca una carrera. Busca una <span>ventaja injusta técnica</span> para dominar el mercado sin perder su autenticidad."</div>
   </div>
 
   <div class="footer">
-    UAO · Mercadeo y Negocios Internacionales · Documento Estratégico Confidencial · 2025
+    <div class="footer-t">UAO · Mercadeo y Negocios Internacionales · Documento Estratégico · 2026</div>
+    <div class="footer-t">Daniela — Pragmática Digital · Bochalema, Cali</div>
   </div>
 
 </div>
