@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAO — Análisis Estratégico Digital | Pitch Competitivo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --red: #c0392b;
+    --red-light: #e74c3c;
+    --gold: #d4a843;
+    --gray-100: #f5f5f5;
+    --gray-200: #e8e8e8;
+    --gray-400: #999999;
+    --gray-600: #555555;
+    --gray-800: #222222;
+    --blue-uao: #003087;
+    --accent: #1a1a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(192,57,43,0.15) 100%);
+  }
+  .cover-accent {
+    width: 80px;
+    height: 4px;
+    background: var(--red);
+    margin-bottom: 40px;
+  }
+  .cover-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red-light);
+    margin-bottom: 20px;
+  }
+  .cover-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .cover-title span { color: var(--red-light); }
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--gray-400);
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 60px;
+    align-items: flex-end;
+  }
+  .cover-meta-item { }
+  .cover-meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+  }
+  .cover-meta-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .cover-number {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Syne', sans-serif;
+    font-size: 220px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page {
+    padding: 50px 60px;
+    page-break-after: always;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .section-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-top: 4px;
+    min-width: 40px;
+  }
+  .section-title-block { flex: 1; }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .section-desc {
+    font-size: 11px;
+    color: var(--gray-400);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── METRICS BAR (D1) ── */
+  .metrics-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 28px;
+  }
+  .metric-box {
+    background: var(--white);
+    padding: 20px;
+  }
+  .metric-box.dark {
+    background: var(--black);
+  }
+  .metric-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 6px;
+  }
+  .metric-box.dark .metric-label { color: var(--gray-400); }
+  .metric-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .metric-box.dark .metric-value { color: var(--white); }
+  .metric-change {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .metric-change.down { color: var(--red); }
+  .metric-change.up { color: #27ae60; }
+  .metric-change.neutral { color: var(--gray-400); }
+
+  /* ── SWOT ── */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 24px;
+  }
+  .swot-cell {
+    background: var(--white);
+    padding: 22px;
+  }
+  .swot-cell.s { background: #0a0a0a; }
+  .swot-cell.w { background: #1a0a0a; }
+  .swot-cell.o { background: #0a1a0a; }
+  .swot-cell.t { background: #1a1a0a; }
+  .swot-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .swot-cell.s .swot-label { color: #6bb8f5; }
+  .swot-cell.w .swot-label { color: var(--red-light); }
+  .swot-cell.o .swot-label { color: #6bcf8f; }
+  .swot-cell.t .swot-label { color: var(--gold); }
+  .swot-list { list-style: none; }
+  .swot-list li {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .swot-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.25);
+    font-size: 9px;
+  }
+
+  /* ── EXEC VERDICT ── */
+  .verdict-box {
+    background: var(--red);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .verdict-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .verdict-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  /* ── TABLES ── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+  thead tr {
+    background: var(--black);
+    color: var(--white);
+  }
+  thead th {
+    padding: 10px 12px;
+    text-align: left;
+    font-family: 'Syne', sans-serif;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--gray-200);
+  }
+  tbody tr:nth-child(even) {
+    background: var(--gray-100);
+  }
+  tbody td {
+    padding: 9px 12px;
+    vertical-align: top;
+    color: var(--gray-800);
+    line-height: 1.5;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .tag-no { background: #fde8e8; color: var(--red); }
+  .tag-yes { background: #e8f5e9; color: #2e7d32; }
+  .tag-partial { background: #fff8e1; color: #f57f17; }
+  .tag-high { background: #fde8e8; color: var(--red); }
+  .tag-med { background: #fff8e1; color: #f57f17; }
+  .tag-low { background: #e8f5e9; color: #2e7d32; }
+  .tag-critical { background: var(--red); color: white; }
+
+  /* ── FUNNEL ── */
+  .funnel-stage {
+    border-left: 3px solid var(--gray-200);
+    padding: 16px 20px;
+    margin-bottom: 2px;
+    position: relative;
+  }
+  .funnel-stage::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+  }
+  .funnel-awareness::before { background: #3498db; }
+  .funnel-consideration::before { background: var(--gold); }
+  .funnel-conversion::before { background: var(--red); }
+  .funnel-nurturing::before { background: #9b59b6; }
+  .funnel-retention::before { background: #27ae60; }
+
+  .funnel-stage-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--black);
+  }
+  .funnel-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .funnel-item-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+  }
+  .funnel-item-text {
+    font-size: 9.5px;
+    color: var(--gray-800);
+    line-height: 1.5;
+  }
+
+  /* ── ROADMAP ── */
+  .roadmap-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1fr;
+    background: var(--black);
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .roadmap-header span {
+    font-family: 'Syne', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .roadmap-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1fr;
+    padding: 10px 12px;
+    gap: 8px;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 9px;
+    color: var(--gray-800);
+  }
+  .roadmap-row:nth-child(even) { background: var(--gray-100); }
+
+  /* ── RECOMMENDATION BOX ── */
+  .rec-box {
+    border: 1px solid var(--gray-200);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .rec-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .rec-title .num {
+    background: var(--red);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Syne', sans-serif;
+  }
+  .rec-text {
+    font-size: 10px;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  /* ── ANALYTICS ARCH ── */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .arch-card {
+    border: 1px solid var(--gray-200);
+    padding: 18px;
+  }
+  .arch-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--red);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .arch-item {
+    font-size: 9.5px;
+    color: var(--gray-600);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--gray-100);
+    line-height: 1.5;
+  }
+  .arch-item:last-child { border-bottom: none; }
+  .arch-item strong { color: var(--black); }
+
+  /* ── FINAL PAGE ── */
+  .final-page {
+    background: var(--black);
+    color: var(--white);
+  }
+  .maturity-bar {
+    background: rgba(255,255,255,0.1);
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .maturity-fill {
+    height: 100%;
+    background: var(--red);
+    border-radius: 3px;
+  }
+  .final-verdict {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 24px;
+    margin-top: 20px;
+  }
+  .final-verdict-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .final-verdict-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 20px 0;
+  }
+
+  /* ── COMPETITOR BAR ── */
+  .comp-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .comp-name {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--gray-600);
+    width: 160px;
+    flex-shrink: 0;
+  }
+  .comp-bar-wrap {
+    flex: 1;
+    background: var(--gray-200);
+    height: 12px;
+  }
+  .comp-bar {
+    height: 100%;
+  }
+  .comp-bar.uao { background: var(--red); }
+  .comp-bar.comp { background: var(--gray-400); }
+  .comp-visits {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--black);
+    width: 60px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── CHANNEL CHART ── */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .channel-card {
+    border: 1px solid var(--gray-200);
+    padding: 14px;
+  }
+  .channel-pct {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .channel-name {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-400);
+    margin-bottom: 6px;
+  }
+  .channel-note {
+    font-size: 9px;
+    color: var(--gray-600);
+    line-height: 1.4;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { font-size: 9pt; }
+    .page { padding: 40px 50px; }
+    .cover { padding: 50px; }
+  }
+
+  /* ── PAGE NUMBER ── */
+  .page-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .page-footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+  .page-footer-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    color: var(--gray-400);
+  }
+
+  h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+  p { margin-bottom: 10px; font-size: 10px; line-height: 1.65; color: var(--gray-800); }
+  .highlight { color: var(--red); font-weight: 600; }
+  .note {
+    background: var(--gray-100);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    font-size: 9.5px;
+    color: var(--gray-600);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .kpi-detail-block {
+    border: 1px solid var(--gray-200);
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .kpi-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--red);
+  }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 6px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 9.5px;
+  }
+  .kpi-row:last-child { border-bottom: none; }
+  .kpi-row-label {
+    font-weight: 600;
+    color: var(--gray-600);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .kpi-row-val { color: var(--gray-800); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div>
+    <div class="cover-accent"></div>
+    <div class="cover-label">Análisis Estratégico Digital · Pitch Competitivo 2026</div>
+    <div class="cover-title">
+      Universidad<br>
+      Autónoma de<br>
+      <span>Occidente</span>
+    </div>
+    <div class="cover-subtitle">
+      Performance Marketing · CRO · Lead Generation · Funnel Strategy<br>
+      Programa: Mercadeo y Negocios Internacionales
+    </div>
+  </div>
+  <div class="cover-number">UAO</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Periodo analizado</div>
+      <div class="cover-meta-value">Abril 2026</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Presupuesto objetivo</div>
+      <div class="cover-meta-value">$1.000.000 COP / mes</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Fuente primaria</div>
+      <div class="cover-meta-value">SimilarWeb + HypeAuditor</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Entregables</div>
+      <div class="cover-meta-value">8 Deliverables</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D1 — EXECUTIVE SUMMARY
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–01</div>
+    <div class="section-title-block">
+      <div class="section-title">Executive Summary</div>
+      <div class="section-desc">Diagnóstico estratégico de madurez digital · UAO 2026</div>
+    </div>
+  </div>
+
+  <!-- KPIs top -->
+  <div class="metrics-bar">
+    <div class="metric-box dark">
+      <div class="metric-label">Visitas mensuales</div>
+      <div class="metric-value">273K</div>
+      <div class="metric-change down">↓ 8.96% vs mes anterior</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Bounce Rate</div>
+      <div class="metric-value">39.86%</div>
+      <div class="metric-change neutral">Aceptable — optimizable</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Duración promedio</div>
+      <div class="metric-value">2:01</div>
+      <div class="metric-change neutral">Baja para educación superior</div>
+    </div>
+    <div class="metric-box dark">
+      <div class="metric-label">ER Instagram</div>
+      <div class="metric-value">2.33%</div>
+      <div class="metric-change neutral">Promedio sector</div>
+    </div>
+  </div>
+
+  <!-- Competitor bars -->
+  <h3>Posición competitiva — Tráfico mensual (Abril 2026)</h3>
+  <div class="comp-row">
+    <div class="comp-name">ICESI (líder)</div>
+    <div class="comp-bar-wrap"><div class="comp-bar comp" style="width:100%"></div></div>
+    <div class="comp-visits">796,485</div>
+  </div>
+  <div class="comp-row">
+    <div class="comp-name">USC</div>
+    <div class="comp-bar-wrap"><div class="comp-bar comp" style="width:92%"></div></div>
+    <div class="comp-visits">738,050</div>
+  </div>
+  <div class="comp-row">
+    <div class="comp-name">Javeriana Cali</div>
+    <div class="comp-bar-wrap"><div class="comp-bar comp" style="width:74%"></div></div>
+    <div class="comp-visits">592,483</div>
+  </div>
+  <div class="comp-row">
+    <div class="comp-name"><strong>UAO (cliente)</strong></div>
+    <div class="comp-bar-wrap"><div class="comp-bar uao" style="width:34%"></div></div>
+    <div class="comp-visits"><strong>273,730</strong></div>
+  </div>
+  <div class="comp-row">
+    <div class="comp-name">FUAC</div>
+    <div class="comp-bar-wrap"><div class="comp-bar comp" style="width:1.2%"></div></div>
+    <div class="comp-visits">9,716</div>
+  </div>
+
+  <div class="note">
+    <strong>Brecha crítica:</strong> UAO recibe apenas el 34% del tráfico de ICESI y el 46% de Javeriana Cali. En términos de visibilidad digital, existe una oportunidad estructural de crecimiento del 65–190% en tráfico orgánico antes de necesitar inversión pagada masiva.
+  </div>
+
+  <!-- SWOT -->
+  <h3>Análisis SWOT Digital</h3>
+  <div class="swot-grid">
+    <div class="swot-cell s">
+      <div class="swot-label">Fortalezas</div>
+      <ul class="swot-list">
+        <li>Bounce rate de 39.86% — mejor que promedio sector educación (~50%)</li>
+        <li>Fuerte presencia orgánica: 47.82% del tráfico vía SEO</li>
+        <li>Tráfico de email relevante: 15.6K visitas/mes (5.71%)</li>
+        <li>Ranking #2,128 en Colombia — posición nacional sólida</li>
+        <li>Diversificación geográfica: presencia en MX, USA, ES, PE</li>
+      </ul>
+    </div>
+    <div class="swot-cell w">
+      <div class="swot-label">Debilidades</div>
+      <ul class="swot-list">
+        <li>Inversión paid search residual: solo 0.99% (vs competencia con >10%)</li>
+        <li>Social Paid prácticamente inexistente: 0.01%</li>
+        <li>Visitas cayendo 8.96% MoM — señal de alarma</li>
+        <li>Mobile traffic solo 30.35% — sitio optimizado para desktop</li>
+        <li>Páginas/visita bajas (2.82) — contenido sin engagement profundo</li>
+        <li>Instagram ER promedio (2.33%) — comunidad pasiva</li>
+        <li>Duración 2:01 — usuario no explora suficiente antes de salir</li>
+      </ul>
+    </div>
+    <div class="swot-cell o">
+      <div class="swot-label">Oportunidades</div>
+      <ul class="swot-list">
+        <li>SEO: dominar términos long-tail de programas específicos</li>
+        <li>Paid Social Gen Z: TikTok + Meta con presupuesto focalizado</li>
+        <li>Conversión del tráfico USA ↑47.68% — mercado hispanohablante EE.UU.</li>
+        <li>Funnel de lead nurturing vía email (base activa)</li>
+        <li>Optimización landing pages de programas — CRO sin inversión adicional</li>
+        <li>Gen AI traffic 0.97% — oportunidad de posicionamiento AEO/GEO</li>
+      </ul>
+    </div>
+    <div class="swot-cell t">
+      <div class="swot-label">Amenazas</div>
+      <ul class="swot-list">
+        <li>ICESI y USC con 3x más tráfico — brecha creciendo</li>
+        <li>Caída simultánea en MX (-30.81%), ES (-20.70%), PE (-18.71%)</li>
+        <li>Algoritmos de Meta y Google penalizan sitios con baja experiencia mobile</li>
+        <li>Presupuesto de $250 USD/mes — limitante para competir en paid</li>
+        <li>Generación Z migra a TikTok como buscador primario</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="verdict-box">
+    <div class="verdict-label">Veredicto Ejecutivo</div>
+    <div class="verdict-text">UAO tiene una base orgánica funcional pero está operando sin motor de paid media. Con un presupuesto de $1M COP/mes, la estrategia no puede competir en volumen — debe competir en precisión: hipersegmentación por intención de búsqueda, CRO en páginas de programa, y nurturing de leads activos. El mayor ROI está en optimizar lo que ya existe antes de escalar inversión.</div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">01 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D2 — KPI MATRIX
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–02</div>
+    <div class="section-title-block">
+      <div class="section-title">Matriz Estratégica de KPIs</div>
+      <div class="section-desc">Medibilidad pública · Herramientas requeridas · Brechas detectadas</div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>KPI</th>
+          <th>Fórmula</th>
+          <th>¿Medible Públicamente?</th>
+          <th>Herramienta</th>
+          <th>Observación Actual</th>
+          <th>Riesgo</th>
+          <th>Oportunidad</th>
+          <th>Recomendación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Impresiones</strong></td>
+          <td>Raw count</td>
+          <td><span class="tag tag-partial">PARCIAL</span></td>
+          <td>Meta Ads Manager / Google Ads</td>
+          <td>Inferido: bajo. Social Paid = 0.01%</td>
+          <td><span class="tag tag-high">Alto</span></td>
+          <td>Campañas de awareness en Meta para Mercadeo MNI</td>
+          <td>Activar campañas de awareness segmentadas por universidades competidoras</td>
+        </tr>
+        <tr>
+          <td><strong>Alcance (Reach)</strong></td>
+          <td>Usuarios únicos expuestos</td>
+          <td><span class="tag tag-no">NO</span></td>
+          <td>Meta Business Suite / GA4</td>
+          <td>N/A en SimilarWeb. IG: 43.2K seguidores</td>
+          <td><span class="tag tag-high">Alto</span></td>
+          <td>Expansión de reach orgánico con contenido educativo Gen Z</td>
+          <td>Configurar GA4 + Meta Pixel para medir reach real de campañas</td>
+        </tr>
+        <tr>
+          <td><strong>Frecuencia</strong></td>
+          <td>Impresiones / Reach</td>
+          <td><span class="tag tag-no">NO</span></td>
+          <td>Meta Ads Manager</td>
+          <td>No medible externamente</td>
+          <td><span class="tag tag-med">Medio</span></td>
+          <td>Control de fatiga publicitaria en campañas de retargeting</td>
+          <td>Benchmark: frecuencia óptima 3–5x para educación superior</td>
+        </tr>
+        <tr>
+          <td><strong>CTR</strong></td>
+          <td>(Clics / Impresiones) × 100</td>
+          <td><span class="tag tag-partial">PARCIAL</span></td>
+          <td>Google Search Console / Ads</td>
+          <td>Paid Search = 0.99% del tráfico — CTR pagado muy bajo</td>
+          <td><span class="tag tag-high">Alto</span></td>
+          <td>Optimizar ad copies con propuestas de valor del programa MNI</td>
+          <td>Benchmark educación: CTR Search 3–6%, Display 0.35–0.5%</td>
+        </tr>
+        <tr>
+          <td><strong>ER / Interaction Rate</strong></td>
+          <td>(Interacciones / Reach) × 100</td>
+          <td><span class="tag tag-yes">SÍ (IG)</span></td>
+          <td>HypeAuditor / Meta Insights</td>
+          <td>2.33% Instagram — calificado como "Promedio"</td>
+          <td><span class="tag tag-med">Medio</span></td>
+          <td>Contenido de generación de comunidad para elevar a 4–6%</td>
+          <td>Activar UGC, encuestas y contenido de egresados MNI en carrusel</td>
+        </tr>
+        <tr>
+          <td><strong>CPC</strong></td>
+          <td>Inversión / Clics</td>
+          <td><span class="tag tag-no">NO</span></td>
+          <td>Google Ads / Meta Ads Manager</td>
+          <td>Hipótesis: CPC educación Colombia $800–2.500 COP</td>
+          <td><span class="tag tag-high">Alto</span></td>
+          <td>Con $1M COP: ~400–1.250 clics/mes si se optimiza</td>
+          <td>Priorizar palabras clave long-tail del programa para menor CPC</td>
+        </tr>
+        <tr>
+          <td><strong>CPL</strong></td>
+          <td>Inversión / Leads generados</td>
+          <td><span class="tag tag-no">NO</span></td>
+          <td>CRM + GA4 + Ads Manager</td>
+          <td>No medible externamente. Hipótesis: $15.000–40.000 COP/lead</td>
+          <td><span class="tag tag-critical">Crítico</span></td>
+          <td>Optimizar formularios y landing para reducir CPL</td>
+          <td>Implementar Lead Gen Forms en Meta — CPL ~30% menor que sitio web</td>
+        </tr>
+        <tr>
+          <td><strong>ROAS</strong></td>
+          <td>Revenue atribuido / Inversión publicitaria</td>
+          <td><span class="tag tag-no">NO</span></td>
+          <td>CRM + Ads Manager + GA4</td>
+          <td>Imposible medir sin CRM con valor de matrícula</td>
+          <td><span class="tag tag-critical">Crítico</span></td>
+          <td>Con valor promedio matrícula: ROAS potencial >10x</td>
+          <td>Configurar conversiones de valor en GA4 con valor de matrícula anual</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Diagnóstico de medibilidad:</strong> 5 de 7 KPIs estratégicos NO son medibles externamente. Esto confirma que UAO opera sin infraestructura de analytics de performance. La primera intervención debe ser técnica: GA4 + Meta Pixel + CRM antes de cualquier inversión en paid media.
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">02 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D3 — DETAILED KPI ANALYSIS
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–03</div>
+    <div class="section-title-block">
+      <div class="section-title">Análisis Detallado de KPIs</div>
+      <div class="section-desc">Diagnóstico individual · Hipótesis · Oportunidades de optimización</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="kpi-detail-block">
+      <div class="kpi-name">01 — Impresiones</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Veces que el contenido/anuncio fue desplegado, sin importar interacción</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">Conteo raw de visualizaciones por plataforma</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">Google Ads, Meta Ads Manager, Search Console</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Aplicación UAO</div><div class="kpi-row-val">Social Paid = 0.01% del tráfico → impresiones pagas prácticamente cero</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Benchmark</div><div class="kpi-row-val">Universidades comparables: 500K–2M impresiones/mes en Meta</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis</div><div class="kpi-row-val">UAO no tiene campañas de awareness activas. El conocimiento de marca depende 100% de tráfico orgánico y directo</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Activar campaña de alcance en Meta + Google Display para programa MNI con video corto 15s</div></div>
+    </div>
+
+    <div class="kpi-detail-block">
+      <div class="kpi-name">02 — Alcance (Reach)</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Usuarios únicos expuestos al contenido en un período determinado</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">Unique users count (no sum of impressions)</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">Meta Business Suite, GA4 Usuarios activos, SimilarWeb</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Aplicación UAO</div><div class="kpi-row-val">273,730 visitas ≠ usuarios únicos. SimilarWeb no reporta unique visitors (N/A)</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Benchmark</div><div class="kpi-row-val">Ratio visitas/usuarios únicos educación: 1.3–1.6x</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis</div><div class="kpi-row-val">Estimado: ~171K–210K usuarios únicos/mes. Audiencia activa subexplotada</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Implementar GA4 para medir users reales y construir audiencias custom en Meta</div></div>
+    </div>
+
+    <div class="kpi-detail-block">
+      <div class="kpi-name">03 — CTR (Click-Through Rate)</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Porcentaje de usuarios que hacen clic al ver el anuncio o resultado</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">(Clics ÷ Impresiones) × 100</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">Google Search Console (orgánico), Google Ads (pagado)</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Aplicación UAO</div><div class="kpi-row-val">Paid Search = 0.99% del tráfico. CTR orgánico estimado bajo para competir vs ICESI</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Benchmark</div><div class="kpi-row-val">Search orgánico: posición 1 = 28% CTR, posición 5 = 7%. Paid educación: 4–8%</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis</div><div class="kpi-row-val">Meta titles y descriptions de programas no están optimizados para CTR. Se pierden clics calificados</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Auditoría de Search Console + optimización de snippets para programa MNI</div></div>
+    </div>
+
+    <div class="kpi-detail-block">
+      <div class="kpi-name">04 — ER / Engagement Rate</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Nivel de interacción promedio de la audiencia con el contenido</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">(Interacciones ÷ Reach) × 100</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">HypeAuditor, Meta Insights, TikTok Analytics</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Aplicación UAO</div><div class="kpi-row-val">IG: 2.33% — promedio. Likes/post: 145 | Comments/post: 2 — comunidad pasiva</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Benchmark</div><div class="kpi-row-val">Universidades top Colombia IG: 3.5–6%. Objetivo MNI: superar 4%</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis</div><div class="kpi-row-val">Contenido institucional genérico. Falta contenido de programa específico, egresados, vida estudiantil</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Content mix: 40% educativo MNI, 30% UGC estudiantes, 30% institucional</div></div>
+    </div>
+
+    <div class="kpi-detail-block">
+      <div class="kpi-name">05 — CPC / CPL</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Costo por clic y costo por lead generado</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">CPC = Inversión÷Clics | CPL = Inversión÷Leads</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">Google Ads, Meta Ads Manager + CRM</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">No medible ext.</div><div class="kpi-row-val">Requiere acceso interno a plataformas de ads y CRM</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis CPC</div><div class="kpi-row-val">Search Colombia educación: $1.200–3.500 COP/clic. Meta: $400–1.200 COP/clic</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Proyección $1M</div><div class="kpi-row-val">Meta: ~800–2.500 clics/mes | Google: ~285–830 clics/mes</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Priorizar Meta Lead Gen Forms para CPL más bajo. Google solo para búsquedas de alta intención</div></div>
+    </div>
+
+    <div class="kpi-detail-block">
+      <div class="kpi-name">06 — ROAS</div>
+      <div class="kpi-row"><div class="kpi-row-label">Definición</div><div class="kpi-row-val">Retorno sobre inversión publicitaria en términos de revenue generado</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fórmula</div><div class="kpi-row-val">Revenue Atribuido ÷ Inversión Publicitaria</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Fuente</div><div class="kpi-row-val">CRM + GA4 + Ads Manager (modelo de atribución unificado)</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">No medible ext.</div><div class="kpi-row-val">Imposible sin acceso a matrículas atribuidas a campañas</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Hipótesis</div><div class="kpi-row-val">Matrícula semestral MNI ~$4.5M–6M COP. Un lead convertido = ROAS 4.5–6x del presupuesto mensual completo</div></div>
+      <div class="kpi-row"><div class="kpi-row-label">Acción</div><div class="kpi-row-val">Implementar tracking de conversiones con valor de matrícula en GA4 para calcular ROAS real</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">03 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D4 — LEAD GEN OPPORTUNITIES
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–04</div>
+    <div class="section-title-block">
+      <div class="section-title">Matriz de Oportunidades de Lead Generation</div>
+      <div class="section-desc">Programa: Mercadeo y Negocios Internacionales · Priorización por ROI</div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Oportunidad</th>
+          <th>Problema Detectado</th>
+          <th>Recomendación Estratégica</th>
+          <th>Etapa Funnel</th>
+          <th>Canal</th>
+          <th>KPI Impactado</th>
+          <th>Prioridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Landing Page dedicada MNI</strong></td>
+          <td>Sin página de aterrizaje específica para el programa con CTA de lead gen</td>
+          <td>Crear landing page con propuesta de valor, formulario de 3 campos, testimonios y CTA "Solicitar información"</td>
+          <td>Conversión</td>
+          <td>Paid + Organic</td>
+          <td>CPL, Tasa de conversión</td>
+          <td><span class="tag tag-critical">CRÍTICA</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Meta Lead Gen Forms</strong></td>
+          <td>Social Paid = 0.01% — prácticamente sin inversión en captación social</td>
+          <td>Activar Lead Generation campaigns en Meta con formulario nativo. Segmentar: 18–24 años, Cali + ciudades principales, intereses: marketing, negocios, exportaciones</td>
+          <td>Consideración</td>
+          <td>Meta Ads</td>
+          <td>CPL, Volumen leads</td>
+          <td><span class="tag tag-critical">CRÍTICA</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Google Search — Intent Keywords</strong></td>
+          <td>Paid Search = 0.99% — sin captura de demanda existente</td>
+          <td>Campañas de búsqueda para: "carrera mercadeo Cali", "negocios internacionales UAO", "universidad mercadeo Valle". Extensiones de anuncio con beneficios del programa</td>
+          <td>Conversión</td>
+          <td>Google Ads Search</td>
+          <td>CTR, CPC, CPL</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Email Nurturing Sequence</strong></td>
+          <td>15.6K visitas por email/mes sin secuencia de nurturing estructurada</td>
+          <td>Secuencia de 5 emails para prospectos: bienvenida → diferenciadores → perfil egresado → becas/financiación → CTA inscripción</td>
+          <td>Nurturing</td>
+          <td>Email Marketing</td>
+          <td>Tasa conversión, ROAS</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>SEO Long-tail Programas</strong></td>
+          <td>Brecha orgánica vs competencia — UAO no domina términos de programa específicos</td>
+          <td>Optimizar páginas de MNI con keywords: "mercadeo y negocios internacionales Colombia", "doble titulación marketing", "salidas laborales mercadeo UAO"</td>
+          <td>Awareness + Consideración</td>
+          <td>SEO Orgánico</td>
+          <td>Tráfico orgánico, Impresiones</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Tráfico USA — Diaspora hispanohablante</strong></td>
+          <td>Tráfico USA +47.68% MoM pero sin estrategia de captación internacional</td>
+          <td>Crear contenido y ads orientados a colombianos en EE.UU. interesados en educación superior virtual o presencial. Destacar reconocimiento internacional del programa</td>
+          <td>Awareness</td>
+          <td>Meta + Google</td>
+          <td>Reach, Impresiones</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Retargeting a visitantes del sitio</strong></td>
+          <td>Sin pixel activo — se pierde el 60%+ de visitantes que no convirtieron</td>
+          <td>Instalar Meta Pixel + Google Tag. Crear audiencias custom de visitantes a páginas de programa. Retargeting con testimonios y CTA "Últimos cupos"</td>
+          <td>Conversión</td>
+          <td>Meta + Google Display</td>
+          <td>CTR, CPL, Conversión</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><strong>GEO/AEO — Posicionamiento en IA</strong></td>
+          <td>Gen AI traffic = 0.97% — UAO no está optimizado para respuestas de ChatGPT/Gemini</td>
+          <td>Crear contenido FAQ estructurado respondiendo preguntas tipo "¿Cuál es la mejor universidad para mercadeo en Cali?" con schema markup</td>
+          <td>Awareness</td>
+          <td>SEO / Content</td>
+          <td>Tráfico, Impresiones Gen AI</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Distribución de presupuesto recomendada — $1.000.000 COP/mes</h3>
+  <div class="metrics-bar">
+    <div class="metric-box dark">
+      <div class="metric-label">Meta Ads (Lead Gen)</div>
+      <div class="metric-value">50%</div>
+      <div class="metric-change neutral">$500K COP — ~400 leads potenciales</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Google Search</div>
+      <div class="metric-value">30%</div>
+      <div class="metric-change neutral">$300K COP — alta intención</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Retargeting Display</div>
+      <div class="metric-value">15%</div>
+      <div class="metric-change neutral">$150K COP — recuperar visitantes</div>
+    </div>
+    <div class="metric-box dark">
+      <div class="metric-label">Contenido / Creatives</div>
+      <div class="metric-value">5%</div>
+      <div class="metric-change neutral">$50K COP — piezas visuales</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">04 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D5 — FUNNEL ANALYSIS
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–05</div>
+    <div class="section-title-block">
+      <div class="section-title">Análisis del Funnel Digital</div>
+      <div class="section-desc">SEE → THINK → DO → CARE — Fricciones, activos faltantes y recomendaciones por etapa</div>
+    </div>
+  </div>
+
+  <div class="funnel-stage funnel-awareness">
+    <div class="funnel-stage-label">① AWARENESS — SEE</div>
+    <div class="funnel-grid">
+      <div>
+        <div class="funnel-item-label">Intención del usuario</div>
+        <div class="funnel-item-text">Explorar opciones de universidades para Mercadeo. Búsquedas genéricas: "universidades en Cali", "carrera mercadeo Colombia"</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Fricción detectada</div>
+        <div class="funnel-item-text">UAO no aparece en paid en búsquedas de marca de competidores. Sin presencia TikTok para Gen Z. Social Paid = 0.01%</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Activos faltantes</div>
+        <div class="funnel-item-text">Videos cortos de vida universitaria. Campañas de awareness en Meta/TikTok. Contenido AEO para búsquedas IA</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Recomendación</div>
+        <div class="funnel-item-text">Activar campañas de video 15s en Meta mostrando campus + experiencia MNI. Alcance: 18–24 años, Cali, Bogotá, Medellín</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">KPIs sugeridos</div>
+        <div class="funnel-item-text">Impresiones, Reach, CPM, Video Views 3s, Frecuencia</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="funnel-stage funnel-consideration">
+    <div class="funnel-stage-label">② CONSIDERATION — THINK</div>
+    <div class="funnel-grid">
+      <div>
+        <div class="funnel-item-label">Intención del usuario</div>
+        <div class="funnel-item-text">Comparar UAO vs ICESI vs Javeriana. Evaluar pensum, costos, duración, salidas laborales de MNI</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Fricción detectada</div>
+        <div class="funnel-item-text">Páginas/visita = 2.82 — usuario no profundiza. Duración 2:01 — insuficiente para evaluar. Contenido de programa escaso o difícil de encontrar</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Activos faltantes</div>
+        <div class="funnel-item-text">Página de programa con comparativo vs competencia. Testimonios en video de egresados MNI. Calculadora de ROI de carrera</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Recomendación</div>
+        <div class="funnel-item-text">Crear página de MNI con propuesta de valor única, comparativo competitivo y CTA claro de descarga de pensum + lead form</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">KPIs sugeridos</div>
+        <div class="funnel-item-text">Tiempo en página, Scroll depth, Páginas por sesión, CTR a formulario</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="funnel-stage funnel-conversion">
+    <div class="funnel-stage-label">③ CONVERSION — DO</div>
+    <div class="funnel-grid">
+      <div>
+        <div class="funnel-item-label">Intención del usuario</div>
+        <div class="funnel-item-text">Solicitar información, agendar visita, descargar pensum o inscribirse al programa MNI</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Fricción detectada</div>
+        <div class="funnel-item-text">Sin formulario de lead gen optimizado. CTAs genéricos. Proceso de inscripción posiblemente largo. Sin chat en vivo para resolver dudas</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Activos faltantes</div>
+        <div class="funnel-item-text">Lead form de 3 campos (nombre, email, teléfono). CTA "Solicitar información sobre MNI". WhatsApp Business integrado. Pop-up de intención de salida</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Recomendación</div>
+        <div class="funnel-item-text">A/B test: formulario embebido vs pop-up vs chat. Implementar WhatsApp como CTA primario para Colombia (tasa conversión 3–5x mayor que email)</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">KPIs sugeridos</div>
+        <div class="funnel-item-text">Tasa conversión formulario, CPL, Leads/mes, Form completion rate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="funnel-stage funnel-nurturing">
+    <div class="funnel-stage-label">④ NURTURING — AFTER DO</div>
+    <div class="funnel-grid">
+      <div>
+        <div class="funnel-item-label">Intención del usuario</div>
+        <div class="funnel-item-text">Comparar UAO con otras opciones post-lead. Necesita refuerzo de decisión antes de pagar matrícula</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Fricción detectada</div>
+        <div class="funnel-item-text">Sin secuencia de email post-lead visible. Base de email existente (15.6K visitas) sin journey estructurado</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Activos faltantes</div>
+        <div class="funnel-item-text">Email sequence automatizada (5–7 correos). Retargeting de leads en Meta. WhatsApp sequence. Contenido de prueba social: rankings, acreditaciones</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Recomendación</div>
+        <div class="funnel-item-text">Automatizar con herramienta de email marketing: secuencia de 5 toques en 14 días post-lead. Asignar asesor comercial a leads de alta calidad</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">KPIs sugeridos</div>
+        <div class="funnel-item-text">Open rate, CTR email, Lead-to-enrollment rate, Time to conversion</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="funnel-stage funnel-retention">
+    <div class="funnel-stage-label">⑤ RETENTION / ADVOCACY — CARE</div>
+    <div class="funnel-grid">
+      <div>
+        <div class="funnel-item-label">Intención del usuario</div>
+        <div class="funnel-item-text">Estudiante activo o egresado. Potencial embajador de marca. Referidos = canal de captación gratuito</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Fricción detectada</div>
+        <div class="funnel-item-text">IG: solo 2 comentarios/post — comunidad no activada como embajadores. Sin programa visible de referidos</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Activos faltantes</div>
+        <div class="funnel-item-text">Programa de referidos estudiantiles. UGC campaigns. LinkedIn alumni community MNI</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">Recomendación</div>
+        <div class="funnel-item-text">Activar programa "Embajadores MNI" con incentivos. UGC campaign #MiVidaEnUAO. Perfiles de egresados exitosos como social proof</div>
+      </div>
+      <div>
+        <div class="funnel-item-label">KPIs sugeridos</div>
+        <div class="funnel-item-text">NPS, Referral rate, ER Instagram, UGC volume, Alumni engagement</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">05 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D6 — ANALYTICS ARCHITECTURE
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–06</div>
+    <div class="section-title-block">
+      <div class="section-title">Arquitectura de Analytics y Tracking</div>
+      <div class="section-desc">Stack técnico recomendado para UAO — De cero a madurez de medición</div>
+    </div>
+  </div>
+
+  <div class="arch-grid">
+    <div class="arch-card">
+      <div class="arch-card-title">GA4 — Configuración Base</div>
+      <div class="arch-item"><strong>Evento clave 1:</strong> form_submit (lead MNI) — con parámetro program_name</div>
+      <div class="arch-item"><strong>Evento clave 2:</strong> page_view en /mercadeo-negocios-internacionales con scroll_depth</div>
+      <div class="arch-item"><strong>Evento clave 3:</strong> cta_click con parámetros cta_text + destination</div>
+      <div class="arch-item"><strong>Conversión principal:</strong> lead_generated con valor = $20.000 COP (CPL objetivo)</div>
+      <div class="arch-item"><strong>Audiencias:</strong> Visitantes programa MNI últimos 30 días (retargeting)</div>
+      <div class="arch-item"><strong>Reportes:</strong> Dashboard de funnel MNI: tráfico → programa → lead → contacto</div>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-card-title">Google Tag Manager — Eventos Críticos</div>
+      <div class="arch-item"><strong>Trigger 1:</strong> Click en botón "Solicitar información" → GA4 + Meta Pixel</div>
+      <div class="arch-item"><strong>Trigger 2:</strong> Scroll 75% en páginas de programa</div>
+      <div class="arch-item"><strong>Trigger 3:</strong> Form submission success → evento Lead</div>
+      <div class="arch-item"><strong>Trigger 4:</strong> Click en número WhatsApp</div>
+      <div class="arch-item"><strong>Trigger 5:</strong> Tiempo en página > 3 minutos (usuario de alta calidad)</div>
+      <div class="arch-item"><strong>Variable:</strong> Nombre del programa desde URL para segmentación granular</div>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-card-title">Meta Pixel + Conversions API</div>
+      <div class="arch-item"><strong>Evento estándar:</strong> Lead — disparo en form submission + confirmación</div>
+      <div class="arch-item"><strong>Evento:</strong> ViewContent en páginas de programas</div>
+      <div class="arch-item"><strong>Evento:</strong> InitiateCheckout en inicio de proceso de inscripción</div>
+      <div class="arch-item"><strong>Conversions API:</strong> Enviar leads confirmados desde CRM para mejorar atribución</div>
+      <div class="arch-item"><strong>Audiencia Lookalike:</strong> 1% de leads históricos → escala con $1M COP</div>
+      <div class="arch-item"><strong>Custom Audience:</strong> Visitantes /mercadeo en últimos 14 días para retargeting</div>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-card-title">UTM Strategy — Trazabilidad 100%</div>
+      <div class="arch-item"><strong>Estructura:</strong> utm_source / utm_medium / utm_campaign / utm_content / utm_term</div>
+      <div class="arch-item"><strong>Ejemplo Meta:</strong> ?utm_source=meta&utm_medium=paid_social&utm_campaign=mni_awareness&utm_content=video_15s</div>
+      <div class="arch-item"><strong>Ejemplo Google:</strong> ?utm_source=google&utm_medium=cpc&utm_campaign=mni_search&utm_term=mercadeo+cali</div>
+      <div class="arch-item"><strong>Ejemplo Email:</strong> ?utm_source=email&utm_medium=newsletter&utm_campaign=nurturing_mni_seq2</div>
+      <div class="arch-item"><strong>Regla:</strong> NUNCA lanzar campaña sin UTMs — es ceguera analítica</div>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-card-title">CRM Integration</div>
+      <div class="arch-item"><strong>Prioridad:</strong> Conectar CRM (HubSpot Free / Zoho) con Meta Lead Gen Forms</div>
+      <div class="arch-item"><strong>Flujo:</strong> Lead en Meta → CRM automático → Asignación a asesor → Notificación WhatsApp</div>
+      <div class="arch-item"><strong>Pipeline:</strong> Lead → Contactado → Interesado → Documentos → Matriculado</div>
+      <div class="arch-item"><strong>Dato crítico:</strong> Registrar UTM de origen para saber qué canal genera matrículas</div>
+      <div class="arch-item"><strong>Automación:</strong> Email de bienvenida automático en &lt;5 min post-lead (↑conversión 3x)</div>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-card-title">Dashboard Architecture</div>
+      <div class="arch-item"><strong>Nivel 1 — Dirección:</strong> Leads/mes, CPL, Inversión, Matrículas atribuidas</div>
+      <div class="arch-item"><strong>Nivel 2 — Marketing:</strong> Canal breakdown, CTR, ER, Embudo conversion</div>
+      <div class="arch-item"><strong>Nivel 3 — Operativo:</strong> Campañas activas, A/B results, Keyword performance</div>
+      <div class="arch-item"><strong>Herramienta:</strong> Looker Studio (gratuito) conectado a GA4 + Google Ads + Meta</div>
+      <div class="arch-item"><strong>Cadencia:</strong> Revisión semanal operativa, mensual ejecutiva</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Atribución recomendada:</strong> Modelo Data-Driven en GA4 (disponible con >500 conversiones/mes). Con volumen bajo inicial ($1M COP/mes), usar Last-Click controlado con UTMs estrictos hasta acumular datos suficientes para modelo probabilístico.
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">06 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D7 — A/B TESTING ROADMAP
+══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">D–07</div>
+    <div class="section-title-block">
+      <div class="section-title">Roadmap de A/B Testing</div>
+      <div class="section-desc">12 hipótesis priorizadas por impacto en funnel y facilidad de implementación</div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Hipótesis</th>
+          <th>Variable a Testear</th>
+          <th>Impacto Esperado</th>
+          <th>Etapa Funnel</th>
+          <th>KPI Impactado</th>
+          <th>Prioridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>CTA "Solicitar información" vs "Descarga el pensum gratis"</strong></td>
+          <td>Texto del CTA principal en landing MNI</td>
+          <td>+20–35% CTR al formulario (menor fricción percibida)</td>
+          <td>Conversión</td>
+          <td>CTR, Lead rate</td>
+          <td><span class="tag tag-critical">CRÍTICA</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Formulario de 3 campos vs 6 campos genera más leads calificados</td>
+          <td>Longitud del formulario de lead gen</td>
+          <td>+40–60% en volumen de leads con form corto</td>
+          <td>Conversión</td>
+          <td>Lead volume, CPL</td>
+          <td><span class="tag tag-critical">CRÍTICA</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Headline con salida laboral vs headline con prestigio institucional</td>
+          <td>H1 de landing page MNI</td>
+          <td>+15–25% tiempo en página y scroll depth</td>
+          <td>Consideración</td>
+          <td>Bounce rate, Time on page</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Video testimonial de egresado vs imagen estática de campus</td>
+          <td>Hero visual en landing page</td>
+          <td>+30% en engagement y tiempo en página</td>
+          <td>Consideración</td>
+          <td>ER, Scroll depth</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Ad en carrusel (beneficios) vs video 15s (experiencia) en Meta</td>
+          <td>Formato de anuncio en campañas de lead gen</td>
+          <td>Video: +40% en CTR awareness | Carrusel: +25% en CTR conversión</td>
+          <td>Awareness / Conversión</td>
+          <td>CTR, CPL</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>CTA WhatsApp vs CTA formulario web en mobile</td>
+          <td>Canal de conversión primario en mobile</td>
+          <td>WhatsApp puede generar 3–5x más conversiones en mobile en Colombia</td>
+          <td>Conversión</td>
+          <td>Lead rate, CPL</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Urgencia temporal ("Cupos limitados semestre 2026-2") vs sin urgencia</td>
+          <td>Copy de urgencia en landing y ads</td>
+          <td>+20–30% en tasa de conversión en período pre-matrícula</td>
+          <td>Conversión</td>
+          <td>Lead rate, Form submit</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Trust signal: "Acreditada por MEN" vs "Ranking universidades 2025" vs logo egresados empresas</td>
+          <td>Elementos de credibilidad en landing</td>
+          <td>+10–20% en lead rate con señales de confianza correctas</td>
+          <td>Consideración</td>
+          <td>Lead rate, Bounce rate</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Email subject: pregunta ("¿Listo para trabajar en multinacionales?") vs beneficio directo</td>
+          <td>Subject line en secuencia de nurturing</td>
+          <td>+25–40% open rate con preguntas personalizadas</td>
+          <td>Nurturing</td>
+          <td>Email open rate, CTR</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Pop-up de intención de salida con oferta (guía de carreras) vs sin pop-up</td>
+          <td>Exit-intent popup en páginas de programa</td>
+          <td>Recuperar 5–15% de visitantes que abandonaban sin convertir</td>
+          <td>Conversión</td>
+          <td>Lead rate, CPL</td>
+          <td><span class="tag tag-med">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Landing page específica MNI vs página general de programas UAO</td>
+          <td>Destino de ads pagados</td>
+          <td>Landing dedicada: +60–80% en conversión vs página general</td>
+          <td>Conversión</td>
+          <td>Conv. rate, CPL, ROAS</td>
+          <td><span class="tag tag-critical">CRÍTICA</span></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Segmentación por ciudad (Cali) vs amplia Colombia en Meta Ads</td>
+          <td>Segmentación geográfica de campañas</td>
+          <td>Cali-first: -30% CPL con mayor relevancia local</td>
+          <td>Awareness</td>
+          <td>CPL, CTR, Relevance score</td>
+          <td><span class="tag tag-high">ALTA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Protocolo de testing con presupuesto limitado:</strong> Con $1M COP/mes no es viable testear múltiples variables simultáneamente. Prioridad: iniciar con tests #1, #2 y #11 — impacto directo en CPL. Cada test requiere mínimo 100 conversiones por variante para significancia estadística (90%).
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num">07 / 08</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     D8 — FINAL STRATEGIC CONCLUSION
+══════════════════════════════════════════════════════ -->
+<div class="page final-page">
+  <div class="section-header" style="border-bottom-color: rgba(255,255,255,0.1)">
+    <div class="section-number" style="color: var(--red-light)">D–08</div>
+    <div class="section-title-block">
+      <div class="section-title" style="color: white">Conclusión Estratégica Final</div>
+      <div class="section-desc" style="color: rgba(255,255,255,0.4)">Diagnóstico · Madurez · Dirección estratégica del pitch</div>
+    </div>
+  </div>
+
+  <!-- Maturity level -->
+  <div style="margin-bottom: 28px">
+    <div style="font-family:'Syne',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:16px">Nivel de Madurez Digital — UAO 2026</div>
+    <div style="display:grid; grid-template-columns: repeat(5,1fr); gap:8px">
+      <div>
+        <div style="font-size:9px; color:rgba(255,255,255,0.4); margin-bottom:6px">Tráfico Orgánico</div>
+        <div class="maturity-bar"><div class="maturity-fill" style="width:68%"></div></div>
+        <div style="font-size:9px; color:var(--red-light); margin-top:4px">68% — Sólido</div>
+      </div>
+      <div>
+        <div style="font-size:9px; color:rgba(255,255,255,0.4); margin-bottom:6px">Paid Media</div>
+        <div class="maturity-bar"><div class="maturity-fill" style="width:8%"></div></div>
+        <div style="font-size:9px; color:var(--red-light); margin-top:4px">8% — Crítico</div>
+      </div>
+      <div>
+        <div style="font-size:9px; color:rgba(255,255,255,0.4); margin-bottom:6px">Social Media</div>
+        <div class="maturity-bar"><div class="maturity-fill" style="width:35%"></div></div>
+        <div style="font-size:9px; color:var(--gold); margin-top:4px">35% — Bajo</div>
+      </div>
+      <div>
+        <div style="font-size:9px; color:rgba(255,255,255,0.4); margin-bottom:6px">Analytics/Tracking</div>
+        <div class="maturity-bar"><div class="maturity-fill" style="width:20%"></div></div>
+        <div style="font-size:9px; color:var(--red-light); margin-top:4px">20% — Incipiente</div>
+      </div>
+      <div>
+        <div style="font-size:9px; color:rgba(255,255,255,0.4); margin-bottom:6px">Lead Gen / CRO</div>
+        <div class="maturity-bar"><div class="maturity-fill" style="width:15%"></div></div>
+        <div style="font-size:9px; color:var(--red-light); margin-top:4px">15% — Crítico</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px">
+    <div style="border:1px solid rgba(255,255,255,0.1); padding:18px">
+      <div style="font-family:'Syne',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--red-light); margin-bottom:12px">Mayor Oportunidad</div>
+      <div style="font-size:10px; color:rgba(255,255,255,0.7); line-height:1.65">UAO tiene <strong style="color:white">~170K usuarios únicos/mes</strong> que llegan al sitio sin encontrar un mecanismo de captura de leads eficiente. Optimizar la conversión del tráfico existente — sin aumentar el presupuesto — podría generar <strong style="color:white">200–400 leads/mes adicionales</strong> para el programa MNI. Esta es la palanca de mayor ROI inmediato.</div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,0.1); padding:18px">
+      <div style="font-family:'Syne',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px">Mayor Riesgo</div>
+      <div style="font-size:10px; color:rgba(255,255,255,0.7); line-height:1.65">La brecha competitiva con ICESI y USC <strong style="color:white">crece cada mes</strong> mientras UAO opera sin paid media activo. El tráfico cayó 8.96% MoM. Sin intervención, <strong style="color:white">el posicionamiento orgánico seguirá erosionándose</strong> a medida que los competidores escalan inversión en SEO y paid.</div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div style="border:1px solid rgba(255,255,255,0.1); padding:20px; margin-bottom:16px">
+    <div style="font-family:'Syne',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:16px">Plan de Acción — 90 Días · $1M COP/mes</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px">
+      <div>
+        <div style="font-family:'Syne',sans-serif; font-size:11px; color:var(--red-light); font-weight:700; margin-bottom:8px">Mes 1 — Fundación</div>
+        <div style="font-size:9.5px; color:rgba(255,255,255,0.65); line-height:1.6">
+          • Instalar GA4 + GTM + Meta Pixel<br>
+          • Crear landing page dedicada MNI<br>
+          • Definir UTM strategy completa<br>
+          • Activar Meta Lead Gen Form<br>
+          • Conectar leads a CRM básico
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif; font-size:11px; color:var(--gold); font-weight:700; margin-bottom:8px">Mes 2 — Activación</div>
+        <div style="font-size:9.5px; color:rgba(255,255,255,0.65); line-height:1.6">
+          • Lanzar campañas Meta + Google Search<br>
+          • Activar retargeting de visitantes<br>
+          • Email sequence nurturing (5 correos)<br>
+          • A/B test CTA y formulario<br>
+          • Primer reporte ejecutivo semanal
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif; font-size:11px; color:#6bcf8f; font-weight:700; margin-bottom:8px">Mes 3 — Optimización</div>
+        <div style="font-size:9.5px; color:rgba(255,255,255,0.65); line-height:1.6">
+          • Optimizar campañas con datos reales<br>
+          • Escalar creativos ganadores<br>
+          • Activar lookalike audiences<br>
+          • SEO long-tail programa MNI<br>
+          • Dashboard Looker Studio activo
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-verdict">
+    <div class="final-verdict-title">Dirección Estratégica del Pitch</div>
+    <div class="final-verdict-text">
+      La propuesta de valor para UAO no es "más pauta" — es <strong style="color:white">transformación de infraestructura digital</strong>. El pitch debe posicionarse como consultoría de crecimiento: primero medimos, luego optimizamos lo existente, luego escalamos con precisión. Con $1M COP/mes, el argumento ganador es <strong style="color:white">eficiencia sobre volumen</strong>: cada peso invertido rastreable, cada lead atribuido, cada matrícula justificada. UAO no necesita gastar como ICESI — necesita ser más inteligente que ICESI. Esa es la propuesta diferencial que gana el pitch.
+    </div>
+  </div>
+
+  <div class="page-footer" style="border-top-color: rgba(255,255,255,0.1)">
+    <div class="page-footer-brand" style="color:rgba(255,255,255,0.3)">UAO — Análisis Estratégico Digital 2026</div>
+    <div class="page-footer-num" style="color:rgba(255,255,255,0.3)">08 / 08</div>
+  </div>
+</div>
+
+</body>
+</html>
