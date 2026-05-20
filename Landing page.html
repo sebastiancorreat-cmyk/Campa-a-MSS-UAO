@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Taller Digital: IA & Mercadeo del Futuro | UAO</title>
+  <!-- Tailwind CSS CDN para un diseño rápido, moderno y responsive -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts - Plus Jakarta Sans (Tipografía geométrica premium y moderna) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            uao: {
+              navy: '#003366',
+              navyDark: '#001A33',
+              red: '#E30613',
+              redLight: '#FF4D5A',
+              green: '#008F39', // Representando el Campus Verde/Biodiverso de la UAO
+              slate: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Efecto de gradiente animado de fondo sutil */
+    .hero-glow {
+      background: radial-gradient(circle at 50% -20%, rgba(227, 6, 19, 0.08) 0%, rgba(0, 51, 102, 0.05) 50%, transparent 100%);
+    }
+    /* Estilos para ocultar el scrollbar estéticamente */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-uao-slate font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between hero-glow">
+
+  <!-- Header con Logotipo Oficial -->
+  <header class="w-full bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="https://www.uao.edu.co" target="_blank" class="block">
+        <!-- Logo UAO -->
+        <img src="https://www.uao.edu.co/wp-content/uploads/2024/12/UAO-LOGO-NUEVO_Mesa-de-trabajo-1-1-1-1.png" alt="Logo UAO" class="h-10 w-auto hover:opacity-90 transition-opacity" />
+      </a>
+      <div class="hidden md:flex items-center space-x-2">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-uao-navy/5 text-uao-navy border border-uao-navy/10">
+          Acreditación de Alta Calidad
+        </span>
+        <span class="text-xs text-slate-400">|</span>
+        <span class="text-sm font-semibold text-uao-navy">Mercadeo y Negocios Internacionales</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    
+    <!-- LADO IZQUIERDO: Información Persuasiva y de Valor -->
+    <div class="lg:col-span-7 space-y-6 md:space-y-8">
+      
+      <!-- Tag dinámico de urgencia -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-uao-red/10 border border-uao-red/20 text-uao-red text-xs sm:text-sm font-bold tracking-wide animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        TALLER GRATUITO ONLINE · 45 MINUTOS
+      </div>
+
+      <!-- Título Principal Disruptivo -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-uao-navy tracking-tight leading-tight">
+        Aprende a <span class="text-uao-red bg-gradient-to-r from-uao-red to-uao-redLight bg-clip-text text-transparent">dirigir la IA</span> para crear marcas globales.
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+        Daniela, el mercado digital ya no busca generalistas que sigan guiones aburridos. Busca estrategas bilingües que dominen herramientas inteligentes. Da el primer paso hacia tu autonomía profesional en este laboratorio guiado por expertos de la UAO.
+      </p>
+
+      <!-- Beneficios en tarjetas con micro-interacciones -->
+      <div class="space-y-4">
+        <!-- Beneficio 1 -->
+        <div class="flex items-start p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-2 bg-uao-navy/5 text-uao-navy rounded-xl mr-4 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-uao-navy">IA como asistente creativo</h4>
+            <p class="text-sm text-slate-500 mt-1">Cómo automatizar tareas repetitivas para enfocarte 100% en diseñar estrategias y conceptos innovadores.</p>
+          </div>
+        </div>
+
+        <!-- Beneficio 2 -->
+        <div class="flex items-start p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-2 bg-uao-red/5 text-uao-red rounded-xl mr-4 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5A2.5 2.5 0 0019 9.5V8a.5.5 0 01.5-.5h.5M12 3a9 9 0 110 18 9 9 0 010-18z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-uao-navy">El detrás de escena de marcas líderes</h4>
+            <p class="text-sm text-slate-500 mt-1">Analizaremos la estrategia de mercadeo internacional de gigantes como Apple y Spotify para entender su éxito.</p>
+          </div>
+        </div>
+
+        <!-- Beneficio 3 -->
+        <div class="flex items-start p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-2 bg-uao-green/5 text-uao-green rounded-xl mr-4 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-uao-navy">Sistemas que te dan libertad y crecimiento</h4>
+            <p class="text-sm text-slate-500 mt-1">Cómo se programan embudos automatizados para generar ventas por internet y facturar de forma bilingüe.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campus verde highlight -->
+      <div class="flex items-center gap-3 p-3 rounded-2xl bg-uao-green/10 text-uao-green max-w-lg">
+        <span class="flex h-3 w-3 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-uao-green opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-uao-green"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-medium">Estudia en un campus sostenible que respira innovación y cuida tu paz mental.</span>
+      </div>
+
+    </div>
+
+    <!-- LADO DERECHO: Formulario de Registro Estilo "Card Flotante" -->
+    <div class="lg:col-span-5">
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 p-6 sm:p-8 relative overflow-hidden">
+        
+        <!-- Línea decorativa superior -->
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-uao-navy to-uao-red"></div>
+
+        <!-- Encabezado del Formulario -->
+        <div class="mb-6 space-y-1">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-uao-navy">Reserva tu Cupo</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Ingresa tus datos para agendarte y recibir el enlace de acceso.</p>
+        </div>
+
+        <!-- FORMULARIO -->
+        <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+          
+          <!-- Campo Nombre -->
+          <div>
+            <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Nombre Completo</label>
+            <div class="relative">
+              <input type="text" id="fullName" name="fullName" required placeholder="Ej: Daniela Gómez" 
+                     class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-uao-navy focus:ring-2 focus:ring-uao-navy/10 outline-none transition-all text-sm font-medium text-slate-700 placeholder-slate-400" />
+            </div>
+          </div>
+
+          <!-- Campo Email -->
+          <div>
+            <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="Ej: daniela@correo.com" 
+                   class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-uao-navy focus:ring-2 focus:ring-uao-navy/10 outline-none transition-all text-sm font-medium text-slate-700 placeholder-slate-400" />
+          </div>
+
+          <!-- Campo WhatsApp -->
+          <div>
+            <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">WhatsApp / Celular</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-500 text-sm font-medium">+57</span>
+              <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="3001234567" 
+                     class="w-full px-4 py-3 rounded-r-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-uao-navy focus:ring-2 focus:ring-uao-navy/10 outline-none transition-all text-sm font-medium text-slate-700 placeholder-slate-400" />
+            </div>
+            <p class="text-[10px] text-slate-400 mt-1">Te enviaremos el recordatorio de acceso por WhatsApp.</p>
+          </div>
+
+          <!-- Grid Colegio y Grado -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Colegio -->
+            <div>
+              <label for="school" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Colegio / Institución</label>
+              <input type="text" id="school" name="school" required placeholder="Nombre de tu colegio" 
+                     class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-uao-navy focus:ring-2 focus:ring-uao-navy/10 outline-none transition-all text-sm font-medium text-slate-700 placeholder-slate-400" />
+            </div>
+            <!-- Grado -->
+            <div>
+              <label for="grade" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">¿Qué grado cursas?</label>
+              <select id="grade" name="grade" required 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-uao-navy focus:ring-2 focus:ring-uao-navy/10 outline-none transition-all text-sm font-medium text-slate-600 appearance-none bg-no-repeat bg-[right_12px_center]">
+                <option value="" disabled selected>Selecciona...</option>
+                <option value="10">Grado Décimo (10°)</option>
+                <option value="11">Grado Once (11°)</option>
+                <option value="egresado">Ya me gradué</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tratamiento de datos -->
+          <div class="flex items-start gap-2 pt-2">
+            <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-uao-navy border-slate-300 rounded focus:ring-uao-navy/15" />
+            <label for="privacy" class="text-xs text-slate-400 leading-tight">
+              Acepto los términos, condiciones y la <a href="https://www.uao.edu.co/politica-de-privacidad/" target="_blank" class="text-uao-navy hover:underline font-semibold">Política de Tratamiento de Datos</a> de la UAO.
+            </label>
+          </div>
+
+          <!-- Botón Enviar Estilo Cápsula Moderna -->
+          <button type="submit" id="submitBtn" class="w-full mt-2 py-3.5 px-6 rounded-full bg-uao-red text-white text-base font-bold shadow-lg shadow-uao-red/20 hover:bg-uao-redLight hover:shadow-uao-red/30 focus:outline-none focus:ring-2 focus:ring-uao-redLight/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer">
+            Reservar Mi Cupo Gratis
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </button>
+
+          <!-- Cupos restantes dinámicos sutiles -->
+          <div class="text-center pt-2">
+            <span class="text-xs font-bold text-uao-navy bg-uao-navy/5 px-3 py-1 rounded-full">
+              ⚡ Cupos disponibles para esta semana: <span id="spotsCounter">14</span>
+            </span>
+          </div>
+
+        </form>
+
+        <!-- PANTALLA DE ÉXITO (Oculta por defecto) -->
+        <div id="successState" class="hidden absolute inset-0 bg-white z-10 p-6 sm:p-8 flex flex-col justify-center items-center text-center space-y-6">
+          
+          <!-- Ícono Check Animado -->
+          <div class="h-20 w-20 bg-uao-green/10 text-uao-green rounded-full flex items-center justify-center shadow-inner animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-2xl font-black text-uao-navy">¡Tu cupo está asegurado, <span id="userFirstName">Daniela</span>!</h3>
+            <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
+              Hemos registrado tus datos correctamente. Acabamos de enviarte los detalles de acceso a tu correo electrónico.
+            </p>
+          </div>
+
+          <!-- Recuadro flotante con regalo inmediato (Estrategia de conversión) -->
+          <div class="w-full p-4 bg-uao-green/5 border border-uao-green/20 rounded-2xl text-left space-y-2">
+            <div class="flex items-center gap-2 text-uao-green font-bold text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              ¡Regalo inmediato desbloqueado!
+            </div>
+            <p class="text-xs text-slate-500 leading-tight">
+              Mientras inicia el taller, descarga gratis nuestro **PDF: Kit de Prompts de IA prácticos para marketers**.
+            </p>
+            <a href="#" onclick="alert('Iniciando descarga ficticia del PDF...')" class="inline-flex items-center text-xs font-bold text-uao-green underline hover:text-green-700 transition-colors">
+              Descargar PDF del Kit ahora
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-400">
+            ¿Dudas o cambios? Escríbenos directamente a <a href="mailto:admision@uao.edu.co" class="text-uao-navy font-bold hover:underline">admision@uao.edu.co</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer con Créditos y Logos de Respaldo -->
+  <footer class="w-full bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      
+      <!-- Lado Izquierdo: Respaldo legal e institucional -->
+      <div class="md:col-span-8 space-y-3">
+        <p class="text-sm font-bold text-white tracking-wide">
+          Universidad Autónoma de Occidente — Cali, Colombia
+        </p>
+        <p class="text-xs leading-relaxed max-w-xl text-slate-500">
+          Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional. Personería Jurídica mediante resolución No. 0618 del 20 de febrero de 1970.
+        </p>
+        <p class="text-xs text-slate-600">
+          © 2026 UAO Cali. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <!-- Lado Derecho: Certificados de calidad sutiles -->
+      <div class="md:col-span-4 flex md:justify-end gap-4 opacity-50 hover:opacity-80 transition-opacity">
+        <div class="text-right">
+          <p class="text-xs font-bold text-white">Acreditación Multicampus</p>
+          <p class="text-[10px] text-slate-500">Alta Calidad Institucional</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Lógica Interactiva en Javascript -->
+  <script>
+    // Contador decreciente simulado para simular escasez y urgencia (Gatillo Mental)
+    let spots = 14;
+    const spotsCounter = document.getElementById('spotsCounter');
+    
+    const interval = setInterval(() => {
+      if (spots > 3) {
+        spots -= Math.floor(Math.random() * 2);
+        spotsCounter.textContent = spots;
+      } else {
+        clearInterval(interval);
+      }
+    }, 15000); // Disminuye aleatoriamente cada 15 segundos
+
+    // Manejador del Envío del Formulario (Estructura en Memoria)
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Evitar recarga de página para el iframe
+
+      // Obtener los datos del formulario
+      const fullNameInput = document.getElementById('fullName').value.trim();
+      const emailInput = document.getElementById('email').value.trim();
+      const phoneInput = document.getElementById('phone').value.trim();
+      const schoolInput = document.getElementById('school').value.trim();
+      const gradeInput = document.getElementById('grade').value;
+
+      // Extraer primer nombre para personalizar la pantalla de éxito
+      const firstName = fullNameInput.split(' ')[0] || 'Daniela';
+
+      // Simulación de guardado de datos (Estructura de objeto lista para CRM o BD)
+      const leadData = {
+        fullName: fullNameInput,
+        email: emailInput,
+        phone: '+57' + phoneInput,
+        school: schoolInput,
+        grade: gradeInput,
+        campaignId: 'uao_mofu_ia_2026',
+        submittedAt: new Date().toISOString()
+      };
+
+      // Guardado en memoria y console log técnico para simular el almacenamiento
+      console.log('--- NUEVO LEAD REGISTRADO EXITOSAMENTE ---');
+      console.log(leadData);
+
+      // Mostrar pantalla de éxito con transición limpia
+      document.getElementById('userFirstName').textContent = firstName;
+      const successState = document.getElementById('successState');
+      successState.classList.remove('hidden');
+      successState.classList.add('animate-fade-in');
+    }
+  </script>
+
+</body>
+</html>
