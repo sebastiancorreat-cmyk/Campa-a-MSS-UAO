@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Persona — Daniela · UAO 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:#C0001A; --red-dark:#8B0010; --brown:#2C1A0E;
+    --beige:#F5ECD7; --beige2:#EDE0C4; --beige3:#D4C4A0;
+    --white:#FFFFFF; --gold:#F5C97A; --text:#2C1A0E; --text2:#7A6A50; --border:#E0D0B0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--beige);color:var(--text);font-size:14px;line-height:1.6;}
+  .page{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 4rem;}
+
+  /* ── HERO ── */
+  .hero{display:grid;grid-template-columns:260px 1fr;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-bottom:1.5rem;}
+  .col-left{background:var(--white);padding:2rem 1.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:1.1rem;align-items:center;text-align:center;}
+  .avatar-svg{width:100px;height:100px;border-radius:50%;border:2.5px solid var(--red);display:block;margin:0 auto;}
+  .profile-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--brown);}
+  .profile-role{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;}
+  .profile-sub{font-size:13px;color:var(--text2);line-height:1.6;margin-top:2px;}
+  .data-rows{width:100%;display:flex;flex-direction:column;gap:6px;}
+  .data-row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;background:var(--beige);border-radius:8px;border:1px solid var(--border);text-align:left;}
+  .data-icon{font-size:13px;flex-shrink:0;margin-top:1px;}
+  .data-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;display:block;margin-bottom:1px;}
+  .data-val{font-size:11.5px;color:var(--text);line-height:1.4;}
+  .data-narrative{font-size:10.5px;color:var(--text2);font-style:italic;margin-top:1px;}
+
+  .col-right{background:var(--beige);padding:2rem;display:flex;flex-direction:column;gap:1.1rem;}
+  .hero-tag{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text2);font-weight:600;display:flex;align-items:center;gap:8px;}
+  .hero-tag::before{content:'';width:18px;height:1px;background:var(--red);}
+  .hero-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--brown);line-height:1.05;}
+  .hero-title span{color:var(--red);}
+  .year-pill{display:inline-block;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--text2);font-weight:600;}
+
+  /* INSIGHT CLAVE — posición 2, dentro del hero */
+  .insight-hero{background:var(--brown);border-radius:12px;padding:1.1rem 1.4rem;text-align:center;}
+  .insight-hero-tag{font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--beige3);font-weight:600;margin-bottom:8px;}
+  .insight-hero-quote{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--white);line-height:1.5;}
+  .insight-hero-quote span{color:var(--gold);}
+
+  /* Dolor */
+  .dolor-box{background:var(--white);border-radius:10px;border:1px solid var(--border);border-left:3px solid var(--red);padding:1rem 1.1rem;}
+  .dolor-tag{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:700;margin-bottom:5px;}
+  .dolor-quote{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--brown);font-style:italic;margin-bottom:6px;}
+  .dolor-context{font-size:10.5px;color:var(--text2);line-height:1.55;font-style:italic;}
+  .dolor-context a{color:var(--red);text-decoration:none;border-bottom:1px dotted var(--red);}
+
+  /* Tensión */
+  .tension{display:grid;grid-template-columns:1fr 36px 1fr;gap:10px;align-items:center;}
+  .t-box{border-radius:10px;padding:0.875rem;}
+  .t-fear{background:#FFF5F5;border:1px solid #FFDDDD;}
+  .t-desire{background:#F5F0FF;border:1px solid #DDD5FF;}
+  .t-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+  .t-fear .t-label{color:var(--red);}
+  .t-desire .t-label{color:#6C5CE7;}
+  .t-item{font-size:11px;color:var(--text);margin-bottom:4px;padding-left:10px;position:relative;line-height:1.4;}
+  .t-item::before{content:'·';position:absolute;left:0;font-weight:700;}
+  .t-fear .t-item::before{color:var(--red);}
+  .t-desire .t-item::before{color:#6C5CE7;}
+  .t-vs{text-align:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--beige3);}
+
+  /* Día digital mini */
+  .day-mini{background:var(--white);border-radius:12px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1rem 1.25rem;}
+  .day-mini-title{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .day-mini-title::before{content:'';width:14px;height:1px;background:var(--red);}
+  .day-mini-sub{font-size:10.5px;color:var(--text2);font-style:italic;margin-bottom:12px;line-height:1.4;}
+  .tl-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;}
+  .tl-time-badge{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:var(--red);background:#FFF0F0;border:1px solid #FFCCCC;border-radius:6px;padding:2px 6px;white-space:nowrap;}
+  .tl-app-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid var(--white);box-shadow:0 0 0 1.5px var(--border);}
+  .tl-app-name{font-size:9px;font-weight:700;text-align:center;line-height:1.2;}
+  .tl-app-desc{font-size:9px;color:var(--text2);text-align:center;line-height:1.3;font-style:italic;}
+  .n-spotify{color:#1DB954;} .dot-spotify{background:#1DB954;}
+  .n-tiktok{color:var(--brown);} .dot-tiktok{background:var(--brown);}
+  .n-ig{color:#E1306C;} .dot-ig{background:#E1306C;}
+  .n-pinterest{color:#E60023;} .dot-pinterest{background:#E60023;}
+
+  /* Cuentas que sigue — dentro del hero col-right */
+  .cuentas-mini{background:var(--white);border-radius:12px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1rem 1.25rem;}
+  .cuentas-mini-title{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .cuentas-mini-title::before{content:'';width:14px;height:1px;background:var(--red);}
+  .cuentas-mini-sub{font-size:10.5px;color:var(--text2);font-style:italic;margin-bottom:10px;line-height:1.4;}
+  .cuentas-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .cuenta-mini-card{background:var(--beige);border-radius:8px;border:1px solid var(--border);padding:0.75rem;display:flex;align-items:flex-start;gap:8px;}
+  .cuenta-mini-av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:var(--white);font-family:'Syne',sans-serif;}
+  .cuenta-mini-handle{font-size:11px;font-weight:700;color:var(--brown);font-family:'Syne',sans-serif;}
+  .cuenta-mini-desc{font-size:9.5px;color:var(--text2);line-height:1.35;margin-top:2px;}
+
+  /* SECCIONES */
+  .section-wrap{background:var(--white);border-radius:16px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1.5rem 1.75rem;margin-bottom:1.5rem;}
+  .section-label{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .section-label::before{content:'';width:16px;height:1px;background:var(--red);}
+  .section-narrative{font-size:11.5px;color:var(--text2);font-style:italic;margin-bottom:1.1rem;line-height:1.5;}
+
+  /* Lo que le gusta */
+  .gusta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .gusta-card{background:var(--beige);border-radius:10px;border:1px solid var(--border);padding:0.875rem 1rem;display:flex;align-items:flex-start;gap:10px;}
+  .gusta-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .gusta-title{font-size:12px;font-weight:700;color:var(--brown);font-family:'Syne',sans-serif;}
+  .gusta-desc{font-size:10.5px;color:var(--text2);line-height:1.4;margin-top:2px;}
+
+  /* AHA */
+  .aha-box{background:var(--white);border-radius:14px;border:1px solid var(--border);border-left:3px solid var(--red);padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+  .aha-tag{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .aha-tag::before{content:'';width:16px;height:1px;background:var(--red);}
+  .aha-text{font-size:13px;color:var(--brown);font-style:italic;line-height:1.75;}
+  .aha-text strong{font-style:normal;color:var(--red);font-weight:700;}
+
+  /* Grid 3 */
+  .three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem;}
+  .comp-card{background:var(--white);border-radius:14px;border:1px solid var(--border);border-top:3px solid var(--red);padding:1.25rem;}
+  .comp-label{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:6px;}
+  .comp-label::before{content:'';width:14px;height:1px;background:var(--red);}
+  .comp-narrative{font-size:10.5px;color:var(--text2);font-style:italic;margin-bottom:10px;line-height:1.45;}
+
+  /* Pain */
+  .pain-list{display:flex;flex-direction:column;gap:6px;}
+  .pain-item{display:flex;gap:7px;align-items:flex-start;padding:6px 8px;border-radius:7px;}
+  .p-high{background:#FFF5F5;border:1px solid #FFE0E0;}
+  .p-med{background:#FFFBF0;border:1px solid #F5E8C0;}
+  .pbadge{font-size:8px;font-weight:700;letter-spacing:0.5px;padding:2px 5px;border-radius:5px;flex-shrink:0;margin-top:1px;}
+  .pb-r{background:#FFE8E8;color:var(--red);}
+  .pb-a{background:#FFF3D0;color:#8B6000;}
+  .ptext{font-size:11px;color:var(--text);line-height:1.4;}
+
+  /* Journey */
+  .journey-list{display:flex;flex-direction:column;gap:9px;}
+  .j-step{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:flex-start;}
+  .j-num{width:24px;height:24px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--white);flex-shrink:0;font-family:'Syne',sans-serif;}
+  .j-name{font-size:12px;font-weight:700;color:var(--brown);font-family:'Syne',sans-serif;}
+  .j-msg{font-size:10.5px;color:var(--text2);font-style:italic;line-height:1.35;}
+
+  /* Canales */
+  .ch-list{display:flex;flex-direction:column;gap:6px;}
+  .ch-row{display:flex;align-items:center;gap:7px;}
+  .ch-name{font-size:10.5px;font-weight:600;color:var(--brown);width:95px;flex-shrink:0;}
+  .ch-track{flex:1;height:4px;background:var(--beige2);border-radius:10px;}
+  .ch-fill{height:4px;border-radius:10px;}
+  .ch-pct{font-size:10px;color:var(--text2);width:28px;text-align:right;}
+  .ch-aud{font-size:8.5px;padding:1px 6px;border-radius:7px;font-weight:600;flex-shrink:0;}
+  .ca-d{background:#FFF0F0;color:var(--red);}
+  .ca-p{background:#FFF8E8;color:#8B6000;}
+  .ca-b{background:#F0F8F0;color:#3B6D11;}
+
+  /* Mensajes */
+  .msgs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem;}
+  .msg-item{background:var(--white);border-radius:0 10px 10px 0;border:1px solid var(--border);border-left:3px solid var(--red);padding:0.875rem 1rem;}
+  .msg-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:4px;}
+  .msg-text{font-size:11.5px;color:var(--brown);font-style:italic;line-height:1.45;}
+
+  /* Estrategia */
+  .est-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem;}
+  .est-card{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:0.875rem;}
+  .est-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:5px;}
+  .est-body{font-size:11px;color:var(--text);line-height:1.55;}
+  .est-body strong{color:var(--red-dark);font-weight:700;}
+
+  /* Marcas */
+  .marcas-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;}
+  .chip-red{font-size:11px;padding:4px 12px;border-radius:20px;background:#FFF0F0;color:var(--red);border:1px solid #FFCCCC;font-weight:600;}
+  .chip-n{font-size:11px;padding:4px 12px;border-radius:20px;background:var(--beige);color:var(--text2);border:1px solid var(--border);font-weight:500;}
+
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:1rem;}
+  .sec-ht{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--brown);white-space:nowrap;}
+  .sec-hl{flex:1;height:1px;background:var(--border);}
+  .footer{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;border-top:1px solid var(--border);margin-top:1.5rem;}
+  .footer-t{font-size:10px;color:var(--beige3);letter-spacing:1px;text-transform:uppercase;}
+
+  @media(max-width:800px){
+    .hero,.three-grid,.msgs-grid,.est-grid,.cuentas-mini-grid,.gusta-grid{grid-template-columns:1fr;}
+    .tension{grid-template-columns:1fr;}
+    .t-vs{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="col-left">
+
+      <!-- AVATAR SVG -->
+      <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" fill="#F5ECD7"/>
+        <ellipse cx="50" cy="118" rx="38" ry="30" fill="#C0001A"/>
+        <rect x="42" y="70" width="16" height="18" rx="4" fill="#D4956A"/>
+        <ellipse cx="50" cy="52" rx="22" ry="24" fill="#C8784A"/>
+        <ellipse cx="50" cy="38" rx="24" ry="16" fill="#1A0A00"/>
+        <ellipse cx="28" cy="55" rx="8" ry="18" fill="#1A0A00"/>
+        <ellipse cx="72" cy="55" rx="8" ry="18" fill="#1A0A00"/>
+        <ellipse cx="50" cy="32" rx="20" ry="10" fill="#1A0A00"/>
+        <ellipse cx="36" cy="45" rx="5" ry="12" fill="#1A0A00"/>
+        <ellipse cx="64" cy="45" rx="5" ry="12" fill="#1A0A00"/>
+        <ellipse cx="42" cy="52" rx="4" ry="3.5" fill="#FFFFFF"/>
+        <ellipse cx="58" cy="52" rx="4" ry="3.5" fill="#FFFFFF"/>
+        <circle cx="43" cy="52" r="2.2" fill="#1A0A00"/>
+        <circle cx="59" cy="52" r="2.2" fill="#1A0A00"/>
+        <circle cx="43.8" cy="51.2" r="0.7" fill="#FFFFFF"/>
+        <circle cx="59.8" cy="51.2" r="0.7" fill="#FFFFFF"/>
+        <path d="M38 47.5 Q42 46 46 47.5" stroke="#1A0A00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M54 47.5 Q58 46 62 47.5" stroke="#1A0A00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M49 55 Q47 59 49 60 Q51 60 53 59 Q55 58 53 55" stroke="#B06040" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M44 64 Q50 69 56 64" stroke="#8B3A1A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <circle cx="28" cy="53" r="4" fill="#C0001A" opacity="0.7"/>
+        <circle cx="72" cy="53" r="4" fill="#C0001A" opacity="0.7"/>
+        <circle cx="28.5" cy="59" r="2" fill="#F5C97A"/>
+        <circle cx="71.5" cy="59" r="2" fill="#F5C97A"/>
+      </svg>
+
+      <div class="profile-name">Daniela</div>
+      <div class="profile-role">Pragmática Digital</div>
+      <div class="profile-sub">17 años · Estrato 4<br>Bochalema, Cali</div>
+
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-icon">🎓</span>
+          <div>
+            <span class="data-label">Etapa académica</span>
+            <span class="data-val">Último grado de secundaria</span>
+            <div class="data-narrative">A punto de tomar la decisión más importante de su vida.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="data-icon">🏠</span>
+          <div>
+            <span class="data-label">Su mundo en casa</span>
+            <span class="data-val">Mamá, Papá, Hermano y su gato 🐱</span>
+            <div class="data-narrative">Su familia la apoya, pero también la cuestiona.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="data-icon">📍</span>
+          <div>
+            <span class="data-label">Dónde vive</span>
+            <span class="data-val">Bochalema, Cali — Valle del Cauca</span>
+            <div class="data-narrative">Su ciudad es su base. El mundo, su mercado.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="data-icon">🎯</span>
+          <div>
+            <span class="data-label">Lo que la mueve</span>
+            <span class="data-val">Contenido · Música · Baile · Videojuegos · Lectura · Viajar</span>
+            <div class="data-narrative">No solo consume contenido — lo crea, lo baila y lo vive.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div class="hero-tag">Buyer Persona · UAO 2026</div>
+          <div class="hero-title">Mercadeo y<br><span>Negocios Internacionales</span></div>
+        </div>
+        <span class="year-pill">UAO · 2026</span>
+      </div>
+
+      <!-- ② INSIGHT CLAVE — posición estratégica -->
+      <div class="insight-hero">
+        <div class="insight-hero-tag">Insight Clave</div>
+        <div class="insight-hero-quote">"Daniela no busca una carrera. Busca una <span>ventaja injusta técnica</span> para dominar el mercado sin perder su autenticidad."</div>
+      </div>
+
+      <!-- ③ DOLOR REAL -->
+      <div class="dolor-box">
+        <div class="dolor-tag">Su dolor real — La frase que la frena</div>
+        <div class="dolor-quote">"Vas a estudiar eso, te vas a morir de hambre."</div>
+        <div class="dolor-context">
+          Estigma documentado por Melisa en <em>Bien Dateado</em> — Señal Colombia (2024). La frase que paraliza a miles de jóvenes colombianos en su decisión vocacional.<br>
+          <a href="https://www.youtube.com/watch?v=L1VQfs199cU" target="_blank">▶ Ver video · min. 08:02–08:10</a>
+        </div>
+      </div>
+
+      <!-- ④ TENSIÓN -->
+      <div class="tension">
+        <div class="t-box t-fear">
+          <div class="t-label">⚠ Lo que la paraliza</div>
+          <div class="t-item">Que la IA reemplace su carrera antes de graduarse</div>
+          <div class="t-item">Título + deuda = trampa financiera</div>
+          <div class="t-item">Ser una más del montón: el "todero" genérico</div>
+          <div class="t-item">Que la creatividad no pague las cuentas</div>
+        </div>
+        <div class="t-vs">VS</div>
+        <div class="t-box t-desire">
+          <div class="t-label">🚀 Lo que la impulsa</div>
+          <div class="t-item">Facturar en dólares desde Cali</div>
+          <div class="t-item">Ser freelancer global con identidad propia</div>
+          <div class="t-item">Dirigir algoritmos, no obedecerlos</div>
+          <div class="t-item">Emprender sin pedir permiso</div>
+        </div>
+      </div>
+
+      <!-- ⑤ DÍA DIGITAL -->
+      <div class="day-mini">
+        <div class="day-mini-title">Su día digital</div>
+        <div class="day-mini-sub">Cada hora tiene una plataforma. Aquí está la ventana estratégica para alcanzarla.</div>
+        <div style="display:flex;align-items:flex-start;gap:4px;">
+          <div class="tl-col">
+            <div class="tl-time-badge">5:00 am</div>
+            <div class="tl-app-dot dot-spotify">🎵</div>
+            <div class="tl-app-name n-spotify">Spotify</div>
+            <div class="tl-app-desc">Se arregla con Karol G a todo volumen</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <div class="tl-col">
+            <div class="tl-time-badge">6:00 am</div>
+            <div class="tl-app-dot dot-tiktok">▶</div>
+            <div class="tl-app-name n-tiktok">TikTok</div>
+            <div class="tl-app-desc">Scroll en la ruta al colegio, a 1.5x</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <div class="tl-col">
+            <div class="tl-time-badge">10:00 am</div>
+            <div class="tl-app-dot dot-ig">📸</div>
+            <div class="tl-app-name n-ig">Instagram</div>
+            <div class="tl-app-desc">30 min en el descanso del colegio</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <div class="tl-col">
+            <div class="tl-time-badge">3:00 pm</div>
+            <div class="tl-app-dot dot-tiktok">▶</div>
+            <div class="tl-app-name n-tiktok">TikTok + IG</div>
+            <div class="tl-app-desc">Peak de consumo en la ruta de regreso</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <div class="tl-col">
+            <div class="tl-time-badge">5:00 pm</div>
+            <div class="tl-app-dot dot-spotify">🎵</div>
+            <div class="tl-app-name n-spotify">Spotify</div>
+            <div class="tl-app-desc">En el gym, sin pantallas, puro ritmo</div>
+          </div>
+          <div style="padding-top:28px;color:var(--border);font-size:10px;">›</div>
+          <div class="tl-col">
+            <div class="tl-time-badge">8:00 pm</div>
+            <div class="tl-app-dot dot-pinterest">📌</div>
+            <div class="tl-app-name n-pinterest">Pinterest</div>
+            <div class="tl-app-desc">Modo inspiración antes de dormir</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥ CUENTAS QUE SIGUE — ocupa espacio vacío -->
+      <div class="cuentas-mini">
+        <div class="cuentas-mini-title">Las cuentas que sigue</div>
+        <div class="cuentas-mini-sub">Sus referentes moldean su visión del éxito y el estilo de vida que quiere alcanzar.</div>
+        <div class="cuentas-mini-grid">
+          <div class="cuenta-mini-card">
+            <div class="cuenta-mini-av" style="background:var(--red);">KG</div>
+            <div>
+              <div class="cuenta-mini-handle">@karolg</div>
+              <div class="cuenta-mini-desc">Mujer latina que rompió fronteras y factura en dólares sin perder su autenticidad.</div>
+            </div>
+          </div>
+          <div class="cuenta-mini-card">
+            <div class="cuenta-mini-av" style="background:var(--brown);">BB</div>
+            <div>
+              <div class="cuenta-mini-handle">@badbunnypr</div>
+              <div class="cuenta-mini-desc">Le demuestra que puedes hablar español y conquistar el mundo.</div>
+            </div>
+          </div>
+          <div class="cuenta-mini-card">
+            <div class="cuenta-mini-av" style="background:#E1306C;">SH</div>
+            <div>
+              <div class="cuenta-mini-handle">@sheinofficial</div>
+              <div class="cuenta-mini-desc">Moda accesible con estética aspiracional — rápida y siempre relevante.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ⑦ LO QUE LE GUSTA A DANIELA -->
+  <div class="section-wrap">
+    <div class="section-label">Lo que le gusta a Daniela</div>
+    <div class="section-narrative">Más allá de las plataformas, estos son los momentos y conexiones emocionales que definen su mundo — y las oportunidades creativas más directas para la campaña.</div>
+    <div class="gusta-grid">
+      <div class="gusta-card">
+        <div class="gusta-icon" style="background:#FFF3D0;">🐾</div>
+        <div>
+          <div class="gusta-title">Animales en publicidad</div>
+          <div class="gusta-desc">Cuando una marca usa animales, Daniela para el scroll. Es su punto de conexión emocional más directo — una oportunidad creativa clave para la UAO.</div>
+        </div>
+      </div>
+      <div class="gusta-card">
+        <div class="gusta-icon" style="background:#FFF0F0;">🎬</div>
+        <div>
+          <div class="gusta-title">Domingos de arrunchis</div>
+          <div class="gusta-desc">Netflix, cobija y buena compañía. Su momento de recarga total — y cuando más receptiva está a contenido emocional y aspiracional.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marcas -->
+    <div style="margin-top:1.1rem;">
+      <div class="section-label" style="margin-bottom:6px;">Las marcas que la representan</div>
+      <div class="marcas-chips">
+        <span class="chip-red">Adidas</span>
+        <span class="chip-n">Apple</span>
+        <span class="chip-n">Spotify</span>
+        <span class="chip-n">Netflix</span>
+        <span class="chip-red">Canva</span>
+        <span class="chip-n">Popsy</span>
+        <span class="chip-n">Shein</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑧ AHA MOMENT -->
+  <div class="aha-box">
+    <div class="aha-tag">El Aha Moment de Daniela</div>
+    <div class="aha-text">El momento exacto en que Daniela deja de ver la carrera como una simple opción académica y empieza a visualizarla como una oportunidad real para construir el futuro y el estilo de vida que desea, sucede cuando descubre, a través de la campaña, <strong>experiencias reales, proyectos prácticos, oportunidades internacionales, conexión con marcas</strong> y <strong>testimonios auténticos de estudiantes y egresados</strong> que ya están creciendo profesionalmente en el mundo del marketing y los negocios.</div>
+  </div>
+
+  <!-- ⑨⑩⑪ PAIN + JOURNEY + CANALES -->
+  <div class="three-grid">
+    <div class="comp-card">
+      <div class="comp-label">Lo que más le duele</div>
+      <div class="comp-narrative">Barreras reales antes de decidir. Ignorarlas en la campaña es perderla.</div>
+      <div class="pain-list">
+        <div class="pain-item p-high"><span class="pbadge pb-r">CRÍTICO</span><span class="ptext">Miedo a invertir 5 años sin empleo digno</span></div>
+        <div class="pain-item p-high"><span class="pbadge pb-r">CRÍTICO</span><span class="ptext">La matrícula como primer filtro eliminatorio</span></div>
+        <div class="pain-item p-high"><span class="pbadge pb-r">ALTO</span><span class="ptext">Terror a que la IA haga obsoleta su carrera</span></div>
+        <div class="pain-item p-med"><span class="pbadge pb-a">MEDIO</span><span class="ptext">Síndrome del impostor frente a privadas</span></div>
+        <div class="pain-item p-med"><span class="pbadge pb-a">MEDIO</span><span class="ptext">"Mejor trabaja ya" — la presión familiar</span></div>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label">Su camino hasta decir sí</div>
+      <div class="comp-narrative">Daniela no decide sola ni de un día para otro. Este es su recorrido emocional.</div>
+      <div class="journey-list">
+        <div class="j-step"><div class="j-num">1</div><div><div class="j-name">Conciencia</div><div class="j-msg">"El mercadeo de hoy no es hacer posts. Es mover el dinero del mundo."</div></div></div>
+        <div class="j-step"><div class="j-num">2</div><div><div class="j-name">Consideración</div><div class="j-msg">"No compitas con la IA. Dirígela desde la UAO."</div></div></div>
+        <div class="j-step"><div class="j-num">3</div><div><div class="j-name">Decisión</div><div class="j-msg">"Paga lo mismo que en tu colegio. El resto, cuando seas profesional."</div></div></div>
+        <div class="j-step"><div class="j-num">4</div><div><div class="j-name">Embajadora</div><div class="j-msg">"Tu red empieza aquí. Tu oficina no tiene límites."</div></div></div>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label">Dónde está Daniela</div>
+      <div class="comp-narrative">Hay que hablarle donde vive — como sus referentes, no como una institución.</div>
+      <div class="ch-list">
+        <div class="ch-row"><span class="ch-name">TikTok</span><div class="ch-track"><div class="ch-fill" style="width:95%;background:var(--brown)"></div></div><span class="ch-pct">95%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Instagram</span><div class="ch-track"><div class="ch-fill" style="width:88%;background:#E1306C"></div></div><span class="ch-pct">88%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Reddit/Quora</span><div class="ch-track"><div class="ch-fill" style="width:75%;background:var(--red)"></div></div><span class="ch-pct">75%</span><span class="ch-aud ca-d">Daniela</span></div>
+        <div class="ch-row"><span class="ch-name">Google SEM</span><div class="ch-track"><div class="ch-fill" style="width:80%;background:#3B6D11"></div></div><span class="ch-pct">80%</span><span class="ch-aud ca-b">Ambos</span></div>
+        <div class="ch-row"><span class="ch-name">WhatsApp</span><div class="ch-track"><div class="ch-fill" style="width:50%;background:#8B6000"></div></div><span class="ch-pct">50%</span><span class="ch-aud ca-p">Padres</span></div>
+        <div class="ch-row"><span class="ch-name">Facebook</span><div class="ch-track"><div class="ch-fill" style="width:30%;background:#8B6000"></div></div><span class="ch-pct">30%</span><span class="ch-aud ca-p">Padres</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑫ MENSAJES -->
+  <div class="sec-head"><div class="sec-ht">Mensajes que la mueven</div><div class="sec-hl"></div></div>
+  <div class="msgs-grid">
+    <div class="msg-item"><div class="msg-tag">La promesa maestra</div><div class="msg-text">"La UAO no te enseña Mercadeo. Te da la ventaja injusta técnica para dominar el mercado global sin perder quien eres."</div></div>
+    <div class="msg-item"><div class="msg-tag">Para Daniela — Gen Z</div><div class="msg-text">"No estudies Mercadeo para hacer posts. Estúdialo para mover la aguja del dinero."</div></div>
+    <div class="msg-item"><div class="msg-tag">Para sus padres</div><div class="msg-text">"Tu esfuerzo vale. El 71% de nuestros egresados trabaja antes de un año. El resto es historia."</div></div>
+    <div class="msg-item"><div class="msg-tag">Contra el miedo a la IA</div><div class="msg-text">"No compitas con la IA. Dirígela. Tu estrategia no tiene fronteras."</div></div>
+  </div>
+
+  <!-- ⑬ ESTRATEGIA -->
+  <div class="sec-head"><div class="sec-ht">Estrategia de campaña recomendada</div><div class="sec-hl"></div></div>
+  <div class="est-grid">
+    <div class="est-card"><div class="est-tag">Tipo de campaña</div><div class="est-body"><strong>Dual:</strong> Awareness Gen Z (TikTok/IG) + Conversión racional padres (Facebook/WhatsApp/Google)</div></div>
+    <div class="est-card"><div class="est-tag">Creativo ideal</div><div class="est-body">Video vertical <strong>sin edición corporativa</strong> — egresadas mostrando trabajo real, salario y vida auténtica</div></div>
+    <div class="est-card"><div class="est-tag">CTAs que convierten</div><div class="est-body">· "Calcula tu financiación"<br>· "Habla con una egresada real"<br>· "Agenda tu simulación práctica"</div></div>
+    <div class="est-card"><div class="est-tag">Ventana táctica</div><div class="est-body">SEM post-resultados <strong>UNAL/UNIVALLE:</strong> 72 horas de oro para captar no admitidos</div></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-t">UAO · Mercadeo y Negocios Internacionales · Documento Estratégico · 2026</div>
+    <div class="footer-t">Daniela — Pragmática Digital · Bochalema, Cali</div>
+  </div>
+
+</div>
+</body>
+</html>
